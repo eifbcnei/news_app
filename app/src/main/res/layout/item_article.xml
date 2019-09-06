@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="190dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_article_photo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            tools:background="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/tv_article_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/iv_article_photo"
+            android:fontFamily="sans-serif-medium"
+            android:maxLength="75"
+            android:maxLines="2"
+            android:textColor="@android:color/black"
+            tools:text="Very very long article title to test multiline attribute." />
+
+        <TextView
+            android:id="@+id/tv_article_description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_article_title"
+            android:layout_margin="8dp"
+            android:layout_toRightOf="@+id/iv_article_photo"
+            android:maxLength="200"
+            android:maxLines="8"
+            tools:text="Some very long text which is general description of the article..." />
+
+        <TextView
+            android:id="@+id/tv_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_article_photo"
+            android:layout_margin="8dp"
+            android:layout_toLeftOf="@id/tv_article_description"
+            tools:text="Mail.ru" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

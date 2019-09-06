@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:background="@android:color/darker_gray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_team_host"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="32dp"
+            tools:background="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/tv_host_goals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="64dp"
+            android:layout_toRightOf="@id/iv_team_host"
+            android:inputType="number"
+            android:textSize="32sp"
+            tools:text="5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="-"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/tv_guest_goals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="64dp"
+            android:layout_toLeftOf="@id/iv_team_guest"
+            android:textSize="32sp"
+            tools:text="2" />
+
+        <ImageView
+            android:id="@+id/iv_team_guest"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="32dp"
+            tools:background="@color/colorAccent" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,8 +1,8 @@
 {
   "matches" : [
    {
-      "hostTeamUrl": "https://images.app.goo.gl/uU3CF9ok14VGx4uW7",
-      "guestTeamUrl": "https://images.app.goo.gl/a4CanaHsdWcg64yRA",
+      "hostTeam": "Spartak",
+      "guestTeam": "Spartak-2",
       "hostGoals": 5,
       "guestGoals": 1
     }

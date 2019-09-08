@@ -1,8 +1,8 @@
 {
   "matches" : [
    {
-      "hostTeamUrl": "nECO4KM/ze4ApxoSIFHkoIlMse/O/I7fi/lhhqfv3AaHTk2LEWduA+7/dGJQJPvW1LLeYxNU37NqVU0hwkH3gD8qZtl+BcD3P9w5HSSH+X2KfBC0lp2wihS7hrUHIvfV3dHR0QC/M+fRPDh954crALyykTpSob8TkH5W",
-      "guestTeamUrl": "nECO4KM/ze4ApxoSIFHkoIlMse/O/I7fi/lhhqfv3AaHTk2LEWduA+7/dGJQJPvW1LLeYxNU37NqVU0hwkH3gD8qZtl+BcD3P9w5HSSH+X2KfBC0lp2wihS7hrUHIvfV3dHR0QC/M+fRPDh954crALyykTpSob8TkH5W",
+      "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+      "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
       "hostGoals": 5,
       "guestGoals": 1
     }

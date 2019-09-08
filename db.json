@@ -4,7 +4,8 @@
       "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
       "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
       "hostGoals": 5,
-      "guestGoals": 1
+      "guestGoals": 1,
+      "date": "01.09.2019"
     }
     ]
 }

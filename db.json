@@ -6,6 +6,41 @@
       "hostGoals": 5,
       "guestGoals": 1,
       "date": "01.09.2019"
-    }
+    },
+    {
+      "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/7a/Manchester_United_FC_crest.svg/1024px-Manchester_United_FC_crest.svg.png",
+      "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+      "hostGoals": 1,
+      "guestGoals": 1,
+      "date": "02.09.2019"
+    },
+    {
+      "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+      "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/f/f7/FC_Chelsea_Logo.svg/1024px-FC_Chelsea_Logo.svg.png",
+      "hostGoals": 0,
+      "guestGoals": 1,
+      "date": "31.08.2019"
+    },
+    {
+      "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+      "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/f/f7/FC_Chelsea_Logo.svg/1024px-FC_Chelsea_Logo.svg.png",
+      "hostGoals": 4,
+      "guestGoals": 1,
+      "date": "01.09.2019"
+    },
+    {
+      "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+      "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/7a/Manchester_United_FC_crest.svg/1024px-Manchester_United_FC_crest.svg.png",
+      "hostGoals": 3,
+      "guestGoals": 2,
+      "date": "01.09.2019"
+    },
+    {
+      "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/7a/Manchester_United_FC_crest.svg/1024px-Manchester_United_FC_crest.svg.png",
+      "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+      "hostGoals": 2,
+      "guestGoals": 3,
+      "date": "01.09.2019"
+    },
     ]
 }

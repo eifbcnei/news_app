@@ -1,84 +1,84 @@
 {
-  "matches" : [
-   {
-      "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
-      "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
-      "hostGoals": 5,
-      "guestGoals": 1,
-      "date": "01.09.2019"
-    },
-    {
-      "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/7a/Manchester_United_FC_crest.svg/1024px-Manchester_United_FC_crest.svg.png",
-      "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
-      "hostGoals": 1,
-      "guestGoals": 1,
-      "date": "02.09.2019"
-    },
-    {
-      "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
-      "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/f/f7/FC_Chelsea_Logo.svg/1024px-FC_Chelsea_Logo.svg.png",
-      "hostGoals": 0,
-      "guestGoals": 1,
-      "date": "31.08.2019"
-    },
-    {
-      "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
-      "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/f/f7/FC_Chelsea_Logo.svg/1024px-FC_Chelsea_Logo.svg.png",
-      "hostGoals": 4,
-      "guestGoals": 1,
-      "date": "01.09.2019"
-    },
-    {
-      "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
-      "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/7a/Manchester_United_FC_crest.svg/1024px-Manchester_United_FC_crest.svg.png",
-      "hostGoals": 3,
-      "guestGoals": 2,
-      "date": "01.09.2019"
-    },
-    {
-      "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/7a/Manchester_United_FC_crest.svg/1024px-Manchester_United_FC_crest.svg.png",
-      "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
-      "hostGoals": 2,
-      "guestGoals": 3,
-      "date": "01.09.2019"
-    }
-    ],
-  "articles": [
-    {
-      "title": "Построил для Моуринью непроходимую защиту, мало самостоятельно тренировал – все это о тренере Шотландии",
-      "description": "Май 2019-го: сборная Шотландии прощается с Алексом Маклишем и занимается поиском нового тренера. Тогда шотландский Футбольный Союз сделал неочевидный шаг – пригласил Стива Кларка на должность главного тренера.",
-      "content": "В сезоне-2005/06, когда «Челси» защитил титул чемпиона АПЛ, у Моуринью спросили о вкладе его помощников в этот успех. Моур прошелся по всем, а о Кларке рассказал поподробнее. «Стив – чудесный человек. Работа ассистента заключается в том, чтобы помогать главному тренеру в любое время суток. Очень многие разграничивают свободное и рабочее время. Стив готов поработать в любую минуту. Не знаю, будет ли он тренировать самостоятельно, но помощник из него отличный».В том сезоне «Челси» оторвался от «МЮ», который был вторым, на восемь очков и стал командой с самой надежной защитой. За год «Челси» пропустил всего 22 гола – лучший результат Лиги – и в этом есть прямой вклад Стива Кларка.\nКларк был защитником (кстати, он играл в двух клубах: в «Сент-Мирене» – 5 лет, в «Челси» – 12 лет), поэтому Моур обязал его контролировать оборону «Челси». Во-первых, Кларк настоял на том, чтобы клуб взял Асьера Дель Орно. Во-вторых, Кларк самостоятельно прорабатывал связки, а потом представлял их Моуринью. Так в центре у «Челси» в АПЛ постоянно играли Галлас и Терри. Хотя Моуринью изначально задумывался о связке Терри-Карвалью.\nМоуринью правильно характеризовал Кларка – он настоящий трудоголик. Он пришел к выводу, что лучше защитникам «Челси» действовать в этой игре посмелее и помогать полузащитникам и форвардам в атаке, а не только при стандартах.\nИтог – 3:0 в пользу «Челси».",
-      "source": "transfermarkt.com",
-      "mainPhotoUrl": "https://bombardir.nekkimobile.ru/images/nut_articles/image/79a4fac016d97f03a02d1e36e5c7aa6f.jpeg",
-      "bonusPhotosUrls": [
-      "https://bombardir.nekkimobile.ru/images/nut_articles/image/922e9257c200c93c4a14a3b9d70a4263.jpg",
-        "https://bombardir.nekkimobile.ru/images/nut_articles/image/81e2084a2651160eaa69768e28ff0bf0.jpeg",
-        "https://bombardir.nekkimobile.ru/images/nut_articles/image/9716be63b33e6c0b190f37d49c7d4b1c.jpeg"
-      ]
-    },
-    {
-      "title": "La Liga started",
-      "description": "Opening match review",
-      "content": "«Барселона» и «Осасуна» сыграли вничью со счетом 2:2. Для «Барсы» это плохо: команда выиграла только один из трех матчей, временно обходится без Лионеля Месси, отпускает вперед конкурентов по таблице. Положительное во всем этом тоже есть. Сейчас Вальверде чаще выпускает на поле молодежь – обычно это не в его стиле.\nПо игре с «Осасуной» больше остальных игроков интересен Ансу Фати. Этот 16-летний парень дебютировал за «Барселону» только в прошлом туре. Тогда его выпустили на последние минуты матча, сейчас дали сыграть целый тайм. На гол «Осасуне» Фати понадобилось всего пять минут. В 16 лет и 304 дня он стал самым юным игроком в истории «Барсы», забивавшим в Примере.",
-      "source": "elgazeta.com",
-      "mainPhotoUrl": "https://bombardir.nekkimobile.ru/images/nut_articles/image/f8387e6bff537e84b8d25645ce52de47.jpg",
-      "bonusPhotosUrls": [
-      "https://pbs.twimg.com/media/EC1-wK5XkAExAB6?format=jpg&name=small",
-        "https://pbs.twimg.com/media/EC2FOZfXYAEfkiU?format=jpg&name=small",
-        "https://pbs.twimg.com/media/D7rkSnGW0AY2Vwp?format=jpg&name=small"
-      ]
-    },
-    {
-      "title": "Champions League draw is starting soon",
-      "description": "Group stage review",
-      "content": "Раунд плей-офф квалификации Лиги чемпионов завершен. До сегодняшнего вечера были известны имена 29 участников группового этапа, по окончании трех отборочных матчей добавились «Аякс», «Брюгге» и «Славия».\nЗенит – чемпион России, и он посеян в первой корзине. Локомотив – в четвертой.\nВот так выглядят корзины перед жеребьевкой, которая начнется в четверг, 29 августа, в 19:00 МСК.\n\nКорзина 1: Ливерпуль», «Челси», «Барселона», «Манчестер Сити», «Ювентус», «Бавария», «ПСЖ», «Зенит».\n\nКорзина 2: «Реал», «Атлетико», «Боруссия» Д, «Наполи», «Шахтер», «Тоттенхэм», «Аякс», «Бенфика».\n\nКорзина 3: «Лион», «Байер», «Ред Булл», «Олимпиакос», «Брюгге», «Валенсия», «Интер», «Динамо» З.\n\nКорзина 4: «Локомотив», «Генк», «Галатасарай», «Лейпциг», «Славия», «Црвена Звезда», «Аталанта», «Лилль».",
-      "source": "sport-express.ru",
-      "mainPhotoUrl": "https://bombardir.nekkimobile.ru/images/nut_articles/image/d5b378bc778b5226ca91ef0f3b3b4466.jpg",
-      "bonusPhotosUrls":[
-      "https://bombardir.nekkimobile.ru/images/nut_articles/image/5f0cf76651e5da7fc014374dcfd0e3b9.jpeg",
-        "https://bombardir.nekkimobile.ru/images/nut_articles/image/d5da82c004809fd1e0cfcf23ad49870c.png",
-        "https://bombardir.nekkimobile.ru/images/nut_articles/image/e91f1ee847bd00850199cea74322a910.jpg"
-      ]
-    }
-    ]
+"matches" : [
+{
+"hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+"guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+"hostGoals": 5,
+"guestGoals": 1,
+"date": "01.09.2019"
+},
+{
+"hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/7a/Manchester_United_FC_crest.svg/1024px-Manchester_United_FC_crest.svg.png",
+"guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+"hostGoals": 1,
+"guestGoals": 1,
+"date": "02.09.2019"
+},
+{
+"hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+"guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/f/f7/FC_Chelsea_Logo.svg/1024px-FC_Chelsea_Logo.svg.png",
+"hostGoals": 0,
+"guestGoals": 1,
+"date": "31.08.2019"
+},
+{
+"hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+"guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/f/f7/FC_Chelsea_Logo.svg/1024px-FC_Chelsea_Logo.svg.png",
+"hostGoals": 4,
+"guestGoals": 1,
+"date": "01.09.2019"
+},
+{
+"hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+"guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/7a/Manchester_United_FC_crest.svg/1024px-Manchester_United_FC_crest.svg.png",
+"hostGoals": 3,
+"guestGoals": 2,
+"date": "01.09.2019"
+},
+{
+"hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/7a/Manchester_United_FC_crest.svg/1024px-Manchester_United_FC_crest.svg.png",
+"guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+"hostGoals": 2,
+"guestGoals": 3,
+"date": "01.09.2019"
+}
+],
+"articles": [
+{
+"title": "Построил для Моуринью непроходимую защиту, мало самостоятельно тренировал – все это о тренере Шотландии",
+"description": "Май 2019-го: сборная Шотландии прощается с Алексом Маклишем и занимается поиском нового тренера. Тогда шотландский Футбольный Союз сделал неочевидный шаг – пригласил Стива Кларка на должность главного тренера.",
+"content": "В сезоне-2005/06, когда «Челси» защитил титул чемпиона АПЛ, у Моуринью спросили о вкладе его помощников в этот успех. Моур прошелся по всем, а о Кларке рассказал поподробнее. «Стив – чудесный человек. Работа ассистента заключается в том, чтобы помогать главному тренеру в любое время суток. Очень многие разграничивают свободное и рабочее время. Стив готов поработать в любую минуту. Не знаю, будет ли он тренировать самостоятельно, но помощник из него отличный».В том сезоне «Челси» оторвался от «МЮ», который был вторым, на восемь очков и стал командой с самой надежной защитой. За год «Челси» пропустил всего 22 гола – лучший результат Лиги – и в этом есть прямой вклад Стива Кларка.\nКларк был защитником (кстати, он играл в двух клубах: в «Сент-Мирене» – 5 лет, в «Челси» – 12 лет), поэтому Моур обязал его контролировать оборону «Челси». Во-первых, Кларк настоял на том, чтобы клуб взял Асьера Дель Орно. Во-вторых, Кларк самостоятельно прорабатывал связки, а потом представлял их Моуринью. Так в центре у «Челси» в АПЛ постоянно играли Галлас и Терри. Хотя Моуринью изначально задумывался о связке Терри-Карвалью.\nМоуринью правильно характеризовал Кларка – он настоящий трудоголик. Он пришел к выводу, что лучше защитникам «Челси» действовать в этой игре посмелее и помогать полузащитникам и форвардам в атаке, а не только при стандартах.\nИтог – 3:0 в пользу «Челси».",
+"source": "transfermarkt.com",
+"mainPhotoUrl": "https://bombardir.nekkimobile.ru/images/nut_articles/image/79a4fac016d97f03a02d1e36e5c7aa6f.jpeg",
+"bonusPhotosUrls": [
+"https://bombardir.nekkimobile.ru/images/nut_articles/image/922e9257c200c93c4a14a3b9d70a4263.jpg",
+"https://bombardir.nekkimobile.ru/images/nut_articles/image/81e2084a2651160eaa69768e28ff0bf0.jpeg",
+"https://bombardir.nekkimobile.ru/images/nut_articles/image/9716be63b33e6c0b190f37d49c7d4b1c.jpeg"
+]
+},
+{
+"title": "La Liga started",
+"description": "Opening match review",
+"content": "«Барселона» и «Осасуна» сыграли вничью со счетом 2:2. Для «Барсы» это плохо: команда выиграла только один из трех матчей, временно обходится без Лионеля Месси, отпускает вперед конкурентов по таблице. Положительное во всем этом тоже есть. Сейчас Вальверде чаще выпускает на поле молодежь – обычно это не в его стиле.\nПо игре с «Осасуной» больше остальных игроков интересен Ансу Фати. Этот 16-летний парень дебютировал за «Барселону» только в прошлом туре. Тогда его выпустили на последние минуты матча, сейчас дали сыграть целый тайм. На гол «Осасуне» Фати понадобилось всего пять минут. В 16 лет и 304 дня он стал самым юным игроком в истории «Барсы», забивавшим в Примере.",
+"source": "elgazeta.com",
+"mainPhotoUrl": "https://bombardir.nekkimobile.ru/images/nut_articles/image/f8387e6bff537e84b8d25645ce52de47.jpg",
+"bonusPhotosUrls": [
+"https://pbs.twimg.com/media/EC1-wK5XkAExAB6?format=jpg&name=small",
+"https://pbs.twimg.com/media/EC2FOZfXYAEfkiU?format=jpg&name=small",
+"https://pbs.twimg.com/media/D7rkSnGW0AY2Vwp?format=jpg&name=small"
+]
+},
+{
+"title": "Champions League draw is starting soon",
+"description": "Group stage review",
+"content": "Раунд плей-офф квалификации Лиги чемпионов завершен. До сегодняшнего вечера были известны имена 29 участников группового этапа, по окончании трех отборочных матчей добавились «Аякс», «Брюгге» и «Славия».\nЗенит – чемпион России, и он посеян в первой корзине. Локомотив – в четвертой.\nВот так выглядят корзины перед жеребьевкой, которая начнется в четверг, 29 августа, в 19:00 МСК.\n\nКорзина 1: Ливерпуль», «Челси», «Барселона», «Манчестер Сити», «Ювентус», «Бавария», «ПСЖ», «Зенит».\n\nКорзина 2: «Реал», «Атлетико», «Боруссия» Д, «Наполи», «Шахтер», «Тоттенхэм», «Аякс», «Бенфика».\n\nКорзина 3: «Лион», «Байер», «Ред Булл», «Олимпиакос», «Брюгге», «Валенсия», «Интер», «Динамо» З.\n\nКорзина 4: «Локомотив», «Генк», «Галатасарай», «Лейпциг», «Славия», «Црвена Звезда», «Аталанта», «Лилль».",
+"source": "sport-express.ru",
+"mainPhotoUrl": "https://bombardir.nekkimobile.ru/images/nut_articles/image/d5b378bc778b5226ca91ef0f3b3b4466.jpg",
+"bonusPhotosUrls":[
+"https://bombardir.nekkimobile.ru/images/nut_articles/image/5f0cf76651e5da7fc014374dcfd0e3b9.jpeg",
+"https://bombardir.nekkimobile.ru/images/nut_articles/image/d5da82c004809fd1e0cfcf23ad49870c.png",
+"https://bombardir.nekkimobile.ru/images/nut_articles/image/e91f1ee847bd00850199cea74322a910.jpg"
+]
+}
+]
 }

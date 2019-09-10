@@ -2,7 +2,8 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="190dp">
+    android:layout_height="190dp"
+    android:layout_margin="@dimen/card_edge_spacing">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -35,9 +36,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/tv_article_title"
-            android:layout_margin="8dp"
+            android:layout_margin="4dp"
             android:layout_toRightOf="@+id/iv_article_photo"
-            android:maxLength="200"
+            android:maxLength="230"
             android:maxLines="8"
             tools:text="Some very long text which is general description of the article..." />
 

@@ -2,9 +2,9 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="80dp"
+    android:layout_margin="@dimen/card_edge_spacing"
     android:orientation="vertical"
-    android:padding="8dp"
     tools:background="@android:color/darker_gray">
 
     <RelativeLayout
@@ -17,7 +17,7 @@
             android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="32dp"
-            tools:background="@color/colorAccent" />
+            android:src="@drawable/ic_unknown_team_50dp" />
 
         <TextView
             android:id="@+id/tv_host_goals"
@@ -31,12 +31,21 @@
             tools:text="5" />
 
         <TextView
+            android:id="@+id/tv_goals_divider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="-"
             android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_goals_divider"
+            android:layout_centerHorizontal="true"
+            tools:text="11.11.2019" />
 
         <TextView
             android:id="@+id/tv_guest_goals"
@@ -55,6 +64,6 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="32dp"
-            tools:background="@color/colorAccent" />
+            android:src="@drawable/ic_unknown_team_50dp" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

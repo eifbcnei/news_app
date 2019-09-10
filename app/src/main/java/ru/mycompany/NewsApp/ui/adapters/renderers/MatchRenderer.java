@@ -2,13 +2,15 @@ package ru.mycompany.NewsApp.ui.adapters.renderers;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.squareup.picasso.Picasso;
+
 import ru.mycompany.NewsApp.R;
-import ru.mycompany.NewsApp.ViewRenderer;
 import ru.mycompany.NewsApp.models.Match;
 import ru.mycompany.NewsApp.ui.adapters.viewholders.MatchViewHolder;
 
@@ -18,13 +20,23 @@ public class MatchRenderer extends ViewRenderer<Match, MatchViewHolder> {
         super(type, context);
     }
 
-
     @Override
-    public void onBindView(@NonNull Match match, MatchViewHolder holder) {
-        holder.hostTeam.setImageBitmap(match.getHostTeam());
-        holder.guestTeam.setImageBitmap(match.getGuestTeam());
+    public void onBindView(@NonNull final Match match, MatchViewHolder holder) {
+        Picasso.with(getContext())
+                .load(match.getHostTeamUrl())
+                .into(holder.hostTeam);
+        Picasso.with(getContext())
+                .load(match.getGuestTeamUrl())
+                .into(holder.guestTeam);
         holder.hostGoals.setText(Integer.toString(match.getHostGoals()));
         holder.guestGoals.setText(Integer.toString(match.getGuestGoals()));
+        holder.date.setText(match.getDate());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onNewsItemClick(match);
+            }
+        });
     }
 
     @NonNull

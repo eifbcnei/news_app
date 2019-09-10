@@ -1,26 +1,29 @@
 package ru.mycompany.NewsApp.models;
 
-import android.graphics.Bitmap;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Match implements NewsItemModel {
     public final static int TYPE = 0;
-    private Bitmap hostTeam;
-    private Bitmap guestTeam;
-    private int hostGoals, guestGoals;
+    @SerializedName("hostTeamUrl")
+    @Expose
+    private String hostTeamUrl;
+    @SerializedName("guestTeamUrl")
+    @Expose
+    private String guestTeamUrl;
+    @SerializedName("hostGoals")
+    @Expose
+    private int hostGoals;
+    @SerializedName("guestGoals")
+    @Expose
+    private int guestGoals;
+    @SerializedName("date")
+    @Expose
+    private String date;
 
-    public Match(Bitmap hostTeam, Bitmap guestTeam, int hostGoals, int guestGoals) {
-        this.hostTeam = hostTeam;
-        this.guestTeam = guestTeam;
-        this.hostGoals = hostGoals;
-        this.guestGoals = guestGoals;
-    }
 
-    public Bitmap getHostTeam() {
-        return hostTeam;
-    }
-
-    public Bitmap getGuestTeam() {
-        return guestTeam;
+    public String getDate() {
+        return date;
     }
 
     public int getHostGoals() {
@@ -31,8 +34,26 @@ public class Match implements NewsItemModel {
         return guestGoals;
     }
 
+    public String getHostTeamUrl() {
+        return hostTeamUrl;
+    }
+
+    public String getGuestTeamUrl() {
+        return guestTeamUrl;
+    }
+
     @Override
     public int getType() {
         return TYPE;
+    }
+
+    @Override
+    public String toString() {
+        return "Match{" +
+                "hostTeamUrl='" + hostTeamUrl + '\'' +
+                ", guestTeamUrl='" + guestTeamUrl + '\'' +
+                ", hostGoals=" + hostGoals +
+                ", guestGoals=" + guestGoals +
+                '}';
     }
 }

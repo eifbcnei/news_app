@@ -6,17 +6,20 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.androidannotations.annotations.EBean;
+
 import java.util.ArrayList;
+import java.util.List;
 
 import ru.mycompany.NewsApp.models.NewsItemModel;
-import ru.mycompany.NewsApp.ViewRenderer;
+import ru.mycompany.NewsApp.ui.adapters.renderers.ViewRenderer;
 
+@EBean
 public class MainAdapter extends RecyclerView.Adapter {
     @NonNull
     private ArrayList<NewsItemModel> mItems = new ArrayList<>();
     @NonNull
     private SparseArray<ViewRenderer> mRenderers = new SparseArray<>();
-
 
     @NonNull
     @Override
@@ -64,7 +67,7 @@ public class MainAdapter extends RecyclerView.Adapter {
         return mItems.size();
     }
 
-    public void setItems(@NonNull final ArrayList<NewsItemModel> items) {
+    public void setItems(@NonNull final List<NewsItemModel> items) {
         mItems.clear();
         mItems.addAll(items);
     }

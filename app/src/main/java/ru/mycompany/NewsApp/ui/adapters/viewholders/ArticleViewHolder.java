@@ -11,13 +11,13 @@ import ru.mycompany.NewsApp.R;
 
 public class ArticleViewHolder extends RecyclerView.ViewHolder {
     public final TextView title, description, source;
-    public final ImageView photo;
+    public final ImageView mainPhoto;
 
     public ArticleViewHolder(@NonNull View itemView) {
         super(itemView);
         title = itemView.findViewById(R.id.tv_article_title);
         description = itemView.findViewById(R.id.tv_article_description);
         source = itemView.findViewById(R.id.tv_source);
-        photo = itemView.findViewById(R.id.iv_article_photo);
+        mainPhoto = itemView.findViewById(R.id.iv_article_photo);
     }
 }

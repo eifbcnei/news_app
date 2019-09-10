@@ -3,22 +3,24 @@
 {
 "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/0/0a/FC_Liverpool.svg/800px-FC_Liverpool.svg.png",
 "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+"stadium": "Anfield",
+"gameType": "Qualification",
+"host": "Liverpool",
+"guest": "Barselona",
 "hostGoals": 4,
 "guestGoals": 0,
+ 
 "date": "01.09.2019"
-},
-{
-"hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/7a/Manchester_United_FC_crest.svg/1024px-Manchester_United_FC_crest.svg.png",
-"guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
-"hostGoals": 1,
-"guestGoals": 1,
-"date": "02.09.2019"
 },
 {
 "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
 "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/f/f7/FC_Chelsea_Logo.svg/1024px-FC_Chelsea_Logo.svg.png",
 "hostGoals": 0,
 "guestGoals": 1,
+"stadium": "Anfield",
+"gameType": "Qualification",
+"host": "Liverpool",
+"guest": "Barselona",
 "date": "31.08.2019"
 },
 {
@@ -27,6 +29,10 @@
 "hostGoals": 2,
 "guestGoals": 1,
 "date": "01.09.2019"
+"stadium": "Anfield",
+"gameType": "Qualification",
+"host": "Liverpool",
+"guest": "Barselona",
 },
 {
 "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
@@ -34,12 +40,20 @@
 "hostGoals": 3,
 "guestGoals": 2,
 "date": "01.09.2019"
+"stadium": "Anfield",
+"gameType": "Qualification",
+"host": "Liverpool",
+"guest": "Barselona",
 },
 {
 "hostTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/7a/Manchester_United_FC_crest.svg/1024px-Manchester_United_FC_crest.svg.png",
 "guestTeamUrl": "https://upload.wikimedia.org/wikipedia/ru/1/14/Manchester_City_logo_2016.png",
 "hostGoals": 2,
 "guestGoals": 3,
+"stadium": "Anfield",
+"gameType": "Qualification",
+"host": "Liverpool",
+"guest": "Barselona",
 "date": "01.09.2019"
 }
 ],
@@ -59,7 +73,7 @@
 {
 "title": "La Liga started",
 "description": "Opening match review",
-"content": "«Барселона» и «Осасуна» сыграли вничью со счетом 2:2. Для «Барсы» это плохо: команда выиграла только один из трех матчей, временно обходится без Лионеля Месси, отпускает вперед конкурентов по таблице. Положительное во всем этом тоже есть. Сейчас Вальверде чаще выпускает на поле молодежь – обычно это не в его стиле.\nПо игре с «Осасуной» больше остальных игроков интересен Ансу Фати. Этот 16-летний парень дебютировал за «Барселону» только в прошлом туре. Тогда его выпустили на последние минуты матча, сейчас дали сыграть целый тайм. На гол «Осасуне» Фати понадобилось всего пять минут. В 16 лет и 304 дня он стал самым юным игроком в истории «Барсы», забивавшим в Примере.",
+"content": "«Барселона» и «Осасуна» сыграли вничью со счетом 2:2. Для «Барсы» это плохо: команда выиграла только один из трех матчей, временно обходится без Лионеля Месси, отпускает вперед конкурентов по таблице. Положительное во всем этом тоже есть.\nПо игре с «Осасуной» больше остальных игроков интересен Ансу Фати. Этот 16-летний парень дебютировал за «Барселону» только в прошлом туре. Тогда его выпустили на последние минуты матча, сейчас дали сыграть целый тайм. На гол «Осасуне» Фати понадобилось всего пять минут. В 16 лет и 304 дня он стал самым юным игроком в истории «Барсы», забивавшим в Примере.",
 "source": "elgazeta.com",
 "mainPhotoUrl": "https://bombardir.nekkimobile.ru/images/nut_articles/image/f8387e6bff537e84b8d25645ce52de47.jpg",
 "bonusPhotosUrls": [

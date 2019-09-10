@@ -41,6 +41,7 @@ public class MainViewModel extends ViewModel {
 
     public void onDataUpdated(List<NewsItemModel> updatedData) {
         allData.setValue(updatedData);
+        visibleData.setValue(updatedData);
     }
 
     /**

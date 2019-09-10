@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                      * else stop animation
                      */
                     srl_refresh.setRefreshing(false);
+                    Toast.makeText(MainActivity.this, getString(R.string.bad_internet_warning), Toast.LENGTH_LONG).show();
                 }
             }
         });

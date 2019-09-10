@@ -2,6 +2,7 @@ package ru.mycompany.NewsApp.ui.activities;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
             @Override
             public void onChanged(List<NewsItemModel> newsItemModels) {
                 if (newsItemModels.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Bad Internet connection. Please, try again", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, getString(R.string.bad_internet_warning), Toast.LENGTH_LONG).show();
                     return;
                 }
                 adapter.setItems(newsItemModels);
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            final List<NewsItemModel> updatedData = new ArrayList<>(viewModel.refresh());
+                            final List<NewsItemModel> updatedData = viewModel.refresh();
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -145,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         }
         switch (item.getType()) {
             case Match.TYPE:
-                MatchActivity_.intent(this).extra("Match", item).parcelableArrayListExtra("Recommendations", recommendations).start();
+                MatchActivity_.intent(this).extra("Match", item).start();
                 break;
             case Article.TYPE:
                 ArticleActivity_.intent(this).extra("Article", item).start();

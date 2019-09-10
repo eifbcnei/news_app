@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/iv_team_host"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/emblem_small_50"
+            android:layout_height="@dimen/emblem_small_50"
             android:layout_centerVertical="true"
             android:layout_marginLeft="32dp"
             android:src="@drawable/ic_unknown_team_50dp" />
@@ -24,9 +24,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="64dp"
+            android:layout_marginLeft="@dimen/spacing_huge_64"
             android:layout_toRightOf="@id/iv_team_host"
-            android:inputType="number"
             android:textSize="32sp"
             tools:text="5" />
 
@@ -36,8 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="-"
-            android:textSize="32sp" />
+            android:text="@string/teams_divider"
+            android:textSize="@dimen/text_large_32" />
 
         <TextView
             android:id="@+id/tv_date"
@@ -52,15 +51,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="64dp"
+            android:layout_marginRight="@dimen/spacing_huge_64"
             android:layout_toLeftOf="@id/iv_team_guest"
-            android:textSize="32sp"
+            android:textSize="@dimen/text_large_32"
             tools:text="2" />
 
         <ImageView
             android:id="@+id/iv_team_guest"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/emblem_small_50"
+            android:layout_height="@dimen/emblem_small_50"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="32dp"

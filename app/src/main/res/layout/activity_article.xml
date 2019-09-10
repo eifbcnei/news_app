@@ -66,27 +66,27 @@
                 android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/spacing_small_8"
                 android:fontFamily="sans-serif-medium"
                 android:textColor="@android:color/black"
-                android:textSize="32sp"
+                android:textSize="@dimen/text_large_32"
                 tools:text="Title" />
 
             <TextView
                 android:id="@+id/tv_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/spacing_little_4"
                 android:gravity="fill_horizontal"
                 android:fontFamily="sans-serif-medium"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_normal_20"
                 tools:text="Content" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_bonus_photos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp">
+                android:layout_margin="@dimen/spacing_little_4">
 
             </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>

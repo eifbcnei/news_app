@@ -1,9 +1,9 @@
 package ru.mycompany.NewsApp.viewmodels;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 
 import java.util.ArrayList;
@@ -16,47 +16,16 @@ import ru.mycompany.NewsApp.network.Repository;
 public class MainViewModel extends ViewModel {
 
     private Repository repository;
-    private MutableLiveData<String> query = new MutableLiveData<>();
     private MutableLiveData<List<NewsItemModel>> visibleData = new MutableLiveData<>();
     private MutableLiveData<List<NewsItemModel>> allData = new MutableLiveData<>();
 
     public MainViewModel() {
         repository = Repository.getInstance();
-        query.setValue("");
         allData.setValue(refresh());
         visibleData.setValue(allData.getValue());
     }
 
     public LiveData<List<NewsItemModel>> getVisibleData() {
-        MediatorLiveData<List<NewsItemModel>> mediator = new MediatorLiveData<>();
-        mediator.addSource(query, new Observer<String>() {
-            @Override
-            public void onChanged(final String s) {
-                /**
-                 * when search query is blank
-                 * show all articles and matches
-                 * else
-                 * show articles which title/description/source
-                 * containing query as substring
-                 */
-                if (s.trim().equals("")) {
-                    List<NewsItemModel> items = new ArrayList<>();
-                    for (NewsItemModel item : allData.getValue()) {
-                        if (item instanceof Article
-                                && (
-                                ((Article) item).getTitle().contains(s)
-                                        || ((Article) item).getSource().contains(s)
-                                        || ((Article) item).getDescription().contains(s))
-                        ) {
-                            items.add(item);
-                        }
-                    }
-                    visibleData.setValue(items);
-                } else {
-                    visibleData.setValue(allData.getValue());
-                }
-            }
-        });
         return visibleData;
     }
 
@@ -74,7 +43,29 @@ public class MainViewModel extends ViewModel {
         allData.setValue(updatedData);
     }
 
+    /**
+     * when search query is blank
+     * show all articles and matches
+     * else
+     * show articles which title/description/source
+     * containing query as substring
+     */
     public void onSearchRequested(String query) {
-        this.query.setValue(query);
+        if (!query.trim().equals("")) {
+            List<NewsItemModel> items = new ArrayList<>();
+            for (NewsItemModel item : allData.getValue()) {
+                if (item instanceof Article
+                        && (
+                        ((Article) item).getTitle().contains(query)
+                                || ((Article) item).getSource().contains(query)
+                                || ((Article) item).getDescription().contains(query))
+                ) {
+                    items.add(item);
+                }
+            }
+            visibleData.setValue(items);
+        } else {
+            visibleData.setValue(allData.getValue());
+        }
     }
 }

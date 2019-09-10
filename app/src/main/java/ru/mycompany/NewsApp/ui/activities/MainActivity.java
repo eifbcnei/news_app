@@ -5,6 +5,7 @@ import android.net.NetworkInfo;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -34,7 +35,6 @@ import ru.mycompany.NewsApp.ui.adapters.renderers.MatchRenderer;
 import ru.mycompany.NewsApp.viewmodels.MainViewModel;
 
 @EActivity(R.layout.activity_main)
-//@OptionsMenu(R.menu.menu_search)
 public class MainActivity extends AppCompatActivity implements NewsItemClickListener {
 
     @ViewById
@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
     MainAdapter adapter;
 
     @AfterViews
-    void initToolbar(){
-        Toolbar toolbar=findViewById(R.id.toolbar);
+    void initToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -66,11 +66,16 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         viewModel.getVisibleData().observe(this, new Observer<List<NewsItemModel>>() {
             @Override
             public void onChanged(List<NewsItemModel> newsItemModels) {
+                if (newsItemModels.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Bad Internet connection. Please, try again", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 adapter.setItems(newsItemModels);
                 adapter.notifyDataSetChanged();
             }
         });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -93,27 +98,6 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         });
         return super.onCreateOptionsMenu(menu);
     }
-
-
-   /* @ViewById
-    SearchView search_view;
-
-    @OptionsItem(R.id.action_search)
-    void onSearch() {
-        search_view.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                viewModel.onSearchRequested(query);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                viewModel.onSearchRequested(newText);
-                return true;
-            }
-        });
-    }*/
 
     @AfterViews
     void onRefreshListenerInit() {
@@ -155,12 +139,16 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
 
     @Override
     public void onNewsItemClick(NewsItemModel item) {
+        ArrayList<Article> recommendations = new ArrayList<>();
+        for (NewsItemModel itemModel : viewModel.getVisibleData().getValue()) {
+            if (itemModel instanceof Article) recommendations.add((Article) itemModel);
+        }
         switch (item.getType()) {
             case Match.TYPE:
-                //TODO implement MatchActivity
+                MatchActivity_.intent(this).extra("Match", item).parcelableArrayListExtra("Recommendations", recommendations).start();
                 break;
             case Article.TYPE:
-                ArticleActivity_.intent(this).extra("Article", (Article) item).start();
+                ArticleActivity_.intent(this).extra("Article", item).start();
                 break;
         }
     }

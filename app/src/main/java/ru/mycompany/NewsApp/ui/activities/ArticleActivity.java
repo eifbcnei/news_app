@@ -1,8 +1,6 @@
 package ru.mycompany.NewsApp.ui.activities;
 
 import android.content.Intent;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Extra;
 import org.androidannotations.annotations.ViewById;
@@ -26,24 +25,36 @@ import ru.mycompany.NewsApp.ui.adapters.BonusPhotoAdapter;
 public class ArticleActivity extends AppCompatActivity {
     @ViewById
     RecyclerView rv_bonus_photos;
-    //@Bean
-    RecyclerView.Adapter mAdapter;
+    @ViewById
+    Toolbar toolbar;
+    @ViewById
+    ImageView iv_main_photo;
+    @ViewById
+    TextView tv_title;
+    @ViewById
+    TextView tv_content;
     @Extra("Article")
     Article article;
 
+    @Click(R.id.ib_share)
+    void onShare() {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "thisAppSite.com/thisArticle");
+        sendIntent.setType("text/plain");
+
+        Intent shareIntent = Intent.createChooser(sendIntent, null);
+        startActivity(shareIntent);
+    }
+
     @AfterViews
     void initUI() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        ImageView main_photo = findViewById(R.id.iv_main_photo);
         Picasso.with(this)
                 .load(article.getMainPhotoUrl())
-                .into(main_photo);
-        TextView tv_title = findViewById(R.id.tv_title);
+                .into(iv_main_photo);
         tv_title.setText(article.getTitle());
-        TextView tv_content = findViewById(R.id.tv_content);
         tv_content.setText(article.getContent());
 
         BonusPhotoAdapter adapter = new BonusPhotoAdapter(this, article.getBonusPhotosUrls());
@@ -51,18 +62,5 @@ public class ArticleActivity extends AppCompatActivity {
         manager.setOrientation(RecyclerView.HORIZONTAL);
         rv_bonus_photos.setLayoutManager(manager);
         rv_bonus_photos.setAdapter(adapter);
-        ImageButton share_btn = findViewById(R.id.ib_share);
-        share_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "thisAppSite.com/thisArticle");
-                sendIntent.setType("text/plain");
-
-                Intent shareIntent = Intent.createChooser(sendIntent, null);
-                startActivity(shareIntent);
-            }
-        });
     }
 }

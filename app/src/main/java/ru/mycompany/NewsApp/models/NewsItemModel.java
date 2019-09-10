@@ -1,5 +1,7 @@
 package ru.mycompany.NewsApp.models;
 
-public interface NewsItemModel {
+import android.os.Parcelable;
+
+public interface NewsItemModel extends Parcelable {
     int getType();
 }

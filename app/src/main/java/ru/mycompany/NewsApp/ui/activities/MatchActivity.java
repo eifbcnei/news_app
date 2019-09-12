@@ -1,5 +1,7 @@
 package ru.mycompany.NewsApp.ui.activities;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -8,12 +10,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.squareup.picasso.Picasso;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Extra;
 import org.androidannotations.annotations.ViewById;
 
 import ru.mycompany.NewsApp.R;
 import ru.mycompany.NewsApp.models.Match;
+import ru.mycompany.NewsApp.models.Team;
 
 
 @EActivity(R.layout.activity_match)
@@ -48,14 +52,28 @@ public class MatchActivity extends AppCompatActivity {
         tv_game_type.setText(match.getGameType());
         tv_host_goals.setText(Integer.toString(match.getHostGoals()));
         tv_guest_goals.setText(Integer.toString(match.getGuestGoals()));
-        tv_host_team.setText(match.getHost());
-        tv_guest_team.setText(match.getGuest());
+        Team host = match.getHost();
+        tv_host_team.setText(host.getName());
+        Team guest = match.getGuest();
+        tv_guest_team.setText(guest.getName());
         tv_review.setText(match.getReview());
         Picasso.with(this)
-                .load(match.getHostTeamUrl())
+                .load(host.getEmblem())
                 .into(iv_host_emblem);
         Picasso.with(this)
-                .load(match.getGuestTeamUrl())
+                .load(guest.getEmblem())
                 .into(iv_guest_emblem);
+    }
+
+    @Click(R.id.iv_host_emblem)
+    void openHostSite() {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(match.getHost().getSite()));
+        startActivity(browserIntent);
+    }
+
+    @Click(R.id.iv_guest_emblem)
+    void openGuestSite() {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(match.getGuest().getSite()));
+        startActivity(browserIntent);
     }
 }

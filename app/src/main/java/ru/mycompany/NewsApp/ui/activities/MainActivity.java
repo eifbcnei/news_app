@@ -2,7 +2,6 @@ package ru.mycompany.NewsApp.ui.activities;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -108,9 +107,7 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                 ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
                 NetworkInfo activeNetworkInfo = cm.getActiveNetworkInfo();
                 if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
-                    /**
-                     *  if connected try downloading data from server
-                     * */
+                    //if connected try downloading data from server
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
@@ -118,9 +115,7 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    /**
-                                     * LiveData can only be updated on ui thread
-                                     */
+                                    // LiveData can only be updated on ui thread
                                     viewModel.onDataUpdated(updatedData);
                                     srl_refresh.setRefreshing(false);
                                 }
@@ -128,9 +123,7 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                         }
                     }).start();
                 } else {
-                    /**
-                     * else stop animation
-                     */
+                    //else stop animation
                     srl_refresh.setRefreshing(false);
                     Toast.makeText(MainActivity.this, getString(R.string.bad_internet_warning), Toast.LENGTH_LONG).show();
                 }
@@ -141,10 +134,6 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
 
     @Override
     public void onNewsItemClick(NewsItemModel item) {
-        ArrayList<Article> recommendations = new ArrayList<>();
-        for (NewsItemModel itemModel : viewModel.getVisibleData().getValue()) {
-            if (itemModel instanceof Article) recommendations.add((Article) itemModel);
-        }
         switch (item.getType()) {
             case Match.TYPE:
                 MatchActivity_.intent(this).extra("Match", item).start();

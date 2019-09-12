@@ -1,13 +1,14 @@
 package ru.mycompany.NewsApp.models;
 
 import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Article implements NewsItemModel {
+public class Article implements NewsItemModel, Parcelable {
     public final static int TYPE = 1;
     @SerializedName("title")
     @Expose

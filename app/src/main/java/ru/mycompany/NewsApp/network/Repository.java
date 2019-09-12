@@ -31,7 +31,6 @@ public class Repository {
         return data;
     }
 
-
     static class MatchesDownloader extends AsyncTask<Void, Void, List<Match>> {
         @Override
         protected List<Match> doInBackground(Void... voids) {
@@ -42,9 +41,26 @@ public class Repository {
                         .getAllMatchPosts()
                         .execute();
                 if (response.isSuccessful()) {
-                    return response.body();
+                    List<Match> matches = response.body();
+                    for (Match match : matches) {
+                        match.setHost(Network
+                                .getInstance()
+                                .getApi()
+                                .getTeam(match.getHost_key())
+                                .execute()
+                                .body()
+                                .get(0));
+                        match.setGuest(Network
+                                .getInstance()
+                                .getApi()
+                                .getTeam(match.getGuest_key())
+                                .execute()
+                                .body()
+                                .get(0));
+                    }
+                    return matches;
                 }
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             return new ArrayList<>();
@@ -52,7 +68,6 @@ public class Repository {
     }
 
     static class ArticlesDownloader extends AsyncTask<Void, Void, List<Article>> {
-
         @Override
         protected List<Article> doInBackground(Void... voids) {
             try {

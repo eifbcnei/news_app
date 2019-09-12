@@ -23,10 +23,10 @@ public class MatchRenderer extends ViewRenderer<Match, MatchViewHolder> {
     @Override
     public void onBindView(@NonNull final Match match, MatchViewHolder holder) {
         Picasso.with(getContext())
-                .load(match.getHostTeamUrl())
+                .load(match.getHost().getEmblem())
                 .into(holder.hostTeam);
         Picasso.with(getContext())
-                .load(match.getGuestTeamUrl())
+                .load(match.getGuest().getEmblem())
                 .into(holder.guestTeam);
         holder.hostGoals.setText(Integer.toString(match.getHostGoals()));
         holder.guestGoals.setText(Integer.toString(match.getGuestGoals()));

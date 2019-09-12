@@ -3,8 +3,8 @@
 {
 "stadium": "Anfield",
 "gameType": "Qualification",
-"host": "FC Liverpool",
-"guest": "FC Barselona",
+"host": "Liverpool",
+"guest": "Barselona",
 "hostGoals": 4,
 "guestGoals": 0,
 "review": "Good game, well played.",
@@ -27,12 +27,12 @@
 ],
 "teams" :[
 {
-"name": "FC Liverpool",
+"name": "Liverpool",
 "emblem": "https://upload.wikimedia.org/wikipedia/ru/thumb/0/0a/FC_Liverpool.svg/800px-FC_Liverpool.svg.png",
 "site": "https://www.liverpoolfc.com/"
 },
 {
-"name": "FC Barselona",
+"name": "Barselona",
 "emblem": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
 "site": "https://www.fcbarcelona.com/en/"
 }

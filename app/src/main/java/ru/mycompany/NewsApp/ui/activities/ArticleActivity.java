@@ -56,7 +56,6 @@ public class ArticleActivity extends AppCompatActivity {
                 .into(iv_main_photo);
         tv_title.setText(article.getTitle());
         tv_content.setText(article.getContent());
-
         BonusPhotoAdapter adapter = new BonusPhotoAdapter(this, article.getBonusPhotosUrls());
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(RecyclerView.HORIZONTAL);

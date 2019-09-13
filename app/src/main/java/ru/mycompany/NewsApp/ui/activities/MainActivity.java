@@ -1,10 +1,13 @@
 package ru.mycompany.NewsApp.ui.activities;
 
+import android.app.ActivityOptions;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +15,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -21,7 +25,6 @@ import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import ru.mycompany.NewsApp.R;
@@ -30,6 +33,7 @@ import ru.mycompany.NewsApp.models.Match;
 import ru.mycompany.NewsApp.models.NewsItemModel;
 import ru.mycompany.NewsApp.ui.adapters.MainAdapter;
 import ru.mycompany.NewsApp.ui.adapters.NewsItemClickListener;
+import ru.mycompany.NewsApp.ui.adapters.SwipeRemoveCallback;
 import ru.mycompany.NewsApp.ui.adapters.renderers.ArticleRenderer;
 import ru.mycompany.NewsApp.ui.adapters.renderers.MatchRenderer;
 import ru.mycompany.NewsApp.viewmodels.MainViewModel;
@@ -58,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         adapter.registerRenderer(new ArticleRenderer(Article.TYPE, this));
         rv_news.setLayoutManager(new LinearLayoutManager(this));
         rv_news.setAdapter(adapter);
+        ItemTouchHelper helper = new ItemTouchHelper(new SwipeRemoveCallback(adapter));
+        helper.attachToRecyclerView(rv_news);
     }
 
     @AfterViews
@@ -67,11 +73,16 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
             @Override
             public void onChanged(List<NewsItemModel> newsItemModels) {
                 if (newsItemModels.isEmpty()) {
+                    //If something went wrong notify user
                     Toast.makeText(MainActivity.this, getString(R.string.bad_internet_warning), Toast.LENGTH_LONG).show();
                     return;
                 }
+                final LayoutAnimationController controller
+                        = AnimationUtils.loadLayoutAnimation(rv_news.getContext(), R.anim.layout_animation_slide_right);
+                rv_news.setLayoutAnimation(controller);
                 adapter.setItems(newsItemModels);
                 adapter.notifyDataSetChanged();
+                rv_news.scheduleLayoutAnimation();
             }
         });
     }

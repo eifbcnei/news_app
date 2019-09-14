@@ -9,6 +9,16 @@
 "guestGoals": 0,
 "review": "Good game, well played.",
 "date": "01.09.2019"
+},
+{
+"stadium": "Anfield",
+"gameType": "Santiago Bernabeu",
+"host": "Real Madrid",
+"guest": "Barselona",
+"hostGoals": 0,
+"guestGoals": 0,
+"review": "What a crazy game!",
+"date": "Live"
 }
 ],
 "articles": [
@@ -35,6 +45,11 @@
 "name": "Barselona",
 "emblem": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
 "site": "https://www.fcbarcelona.com/en/"
+},
+{
+"name": "Real Madrid",
+"emblem": "https://upload.wikimedia.org/wikipedia/ru/9/98/Real_Madrid.png",
+"site": "https://www.realmadrid.com"
 }
 ]
 }

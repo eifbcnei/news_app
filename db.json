@@ -2,7 +2,7 @@
 "matches" : [
 {
 "stadium": "Anfield",
-"gameType": "Qualification",
+"gameType": "Play-off",
 "host": "Liverpool",
 "guest": "Barselona",
 "hostGoals": 4,
@@ -12,8 +12,8 @@
 "tags": []
 },
 {
-"stadium": "Anfield",
-"gameType": "Santiago Bernabeu",
+"stadium": "Santiago Bernabeu",
+"gameType": "La Liga",
 "host": "Real Madrid",
 "guest": "Barselona",
 "hostGoals": 0,

@@ -100,7 +100,7 @@ public class MainAdapter extends RecyclerView.Adapter {
     private void showUndoSnackbar() {
         View view = ((MainActivity) mContext).findViewById(R.id.main_container);
         Snackbar snackbar = Snackbar.make(view, mContext.getString(R.string.restore_hint), Snackbar.LENGTH_LONG);
-        snackbar.setAction(mContext.getString(R.string.undo), new View.OnClickListener() {
+        snackbar.setAction(mContext.getString(R.string.restore), new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 undoDelete();

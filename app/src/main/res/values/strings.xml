@@ -3,7 +3,7 @@
     <string name="bad_internet_warning">Bad Internet connection. Please, try again</string>
     <string name="experts_opinion">Experts\' opinion:</string>
     <string name="teams_divider">-</string>
-    <string name="search_hint">Enter key words</string>
+    <string name="search_hint">Enter key words...</string>
     <string name="restore_hint">Do you want to restore?</string>
-    <string name="undo">Undo</string>
+    <string name="restore">Restore</string>
 </resources>

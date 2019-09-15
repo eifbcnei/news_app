@@ -10,7 +10,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import ru.mycompany.NewsApp.App;
 import ru.mycompany.NewsApp.R;
-import ru.mycompany.NewsApp.models.Article;
 import ru.mycompany.NewsApp.models.NewsItemModel;
 import ru.mycompany.NewsApp.network.Repository;
 
@@ -52,24 +51,21 @@ public class MainViewModel extends ViewModel {
     }
 
     /**
-     * when search query is blank
+     * when search query is not blank
      * show all articles and matches
+     * where query is ignore-case-substring of some tag
      * else
-     * show articles which title/description/source
-     * containing query as substring
+     * show all data
      */
-    //TODO optimize using tags
     public void onSearchRequested(String query) {
         if (!query.trim().equals("")) {
             List<NewsItemModel> items = new ArrayList<>();
             for (NewsItemModel item : allData.getValue()) {
-                if (item instanceof Article
-                        && (
-                        ((Article) item).getTitle().contains(query)
-                                || ((Article) item).getSource().contains(query)
-                                || ((Article) item).getDescription().contains(query))
-                ) {
-                    items.add(item);
+                for (String tag : item.getTags()) {
+                    if (tag.toLowerCase().contains(query.toLowerCase())) {
+                        items.add(item);
+                        break;
+                    }
                 }
             }
             visibleData.setValue(new CopyOnWriteArrayList<>(items));

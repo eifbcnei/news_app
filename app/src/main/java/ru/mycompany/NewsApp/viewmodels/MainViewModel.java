@@ -22,7 +22,8 @@ public class MainViewModel extends ViewModel {
 
     public MainViewModel() {
         repository = Repository.getInstance();
-        allData.setValue(refresh());
+        allData.setValue(refreshPosts());
+        tags.setValue(refreshTags());
         visibleData.setValue(new CopyOnWriteArrayList<>(allData.getValue()));
     }
 
@@ -34,20 +35,21 @@ public class MainViewModel extends ViewModel {
         return visibleData;
     }
 
-    public List<NewsItemModel> refresh() {
+    public List<NewsItemModel> refreshPosts() {
         List<NewsItemModel> data;
         try {
             data = repository.getAllPosts();
-            tags.setValue(repository.getTags());
         } catch (Exception e) {
+            e.printStackTrace();
             data = new ArrayList<>();
         }
         return data;
     }
 
-    public void onDataUpdated(List<NewsItemModel> updatedData) {
+    public void onDataUpdated(List<NewsItemModel> updatedData,List<String> updatedTags) {
         allData.setValue(updatedData);
         visibleData.setValue(new CopyOnWriteArrayList<>(updatedData));
+        tags.setValue(updatedTags);
     }
 
     /**
@@ -89,5 +91,14 @@ public class MainViewModel extends ViewModel {
         }
 
         visibleData.setValue(new CopyOnWriteArrayList<>(visible));
+    }
+
+    public List<String> refreshTags() {
+        try {
+            return repository.getTags();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
     }
 }

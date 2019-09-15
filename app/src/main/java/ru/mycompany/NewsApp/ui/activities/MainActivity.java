@@ -3,6 +3,7 @@ package ru.mycompany.NewsApp.ui.activities;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         viewModel.getVisibleData().observe(this, new Observer<CopyOnWriteArrayList<NewsItemModel>>() {
             @Override
             public void onChanged(CopyOnWriteArrayList<NewsItemModel> newsItemModels) {
+                Log.d("___onDataChanged", newsItemModels.toString());
                 if (newsItemModels.isEmpty() && !isConnected()) {
                     //If something went wrong notify user
                     Toast.makeText(MainActivity.this, getString(R.string.bad_internet_warning), Toast.LENGTH_LONG).show();
@@ -142,17 +144,19 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         srl_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                Log.d("___onRefresh", Boolean.toString(isConnected()));
                 if (isConnected()) {
                     //if connected try downloading data from server
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            final List<NewsItemModel> updatedData = viewModel.refresh();
+                            final List<NewsItemModel> updatedData = viewModel.refreshPosts();
+                            final List<String> updatedTags = viewModel.refreshTags();
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
                                     // LiveData can only be updated on ui thread
-                                    viewModel.onDataUpdated(updatedData);
+                                    viewModel.onDataUpdated(updatedData, updatedTags);
                                     srl_refresh.setRefreshing(false);
                                 }
                             });

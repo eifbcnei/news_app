@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
-        android:background="@color/background"
+        android:background="@color/colorBackground"
         android:orientation="vertical">
 
         <com.google.android.material.chip.ChipGroup
@@ -48,7 +48,7 @@
                 app:checkedIcon="@drawable/ic_fiber_new_24dp"
                 app:chipBackgroundColor="@color/colorAccentDark"
                 app:closeIconTint="@android:color/white"
-                app:rippleColor="@color/background" />
+                app:rippleColor="@color/colorBackground" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_live_matches"
@@ -61,7 +61,7 @@
                 app:checkedIcon="@drawable/ic_live_tv_24dp"
                 app:chipBackgroundColor="@color/colorAccent"
                 app:closeIconTint="@android:color/white"
-                app:rippleColor="@color/background" />
+                app:rippleColor="@color/colorBackground" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_hot"
@@ -72,14 +72,14 @@
                 android:textColor="@android:color/white"
                 app:checkedIcon="@drawable/ic_hot_24dp"
                 app:chipBackgroundColor="@color/colorAccent"
-                app:rippleColor="@color/background" />
+                app:rippleColor="@color/colorBackground" />
         </com.google.android.material.chip.ChipGroup>
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/srl_refresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/background">
+            android:background="@color/colorBackground">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_news"

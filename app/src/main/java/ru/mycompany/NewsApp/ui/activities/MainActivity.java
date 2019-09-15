@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                     chip.setTextColor(Color.WHITE);
                     chip.setClickable(true);
                     chip.setCheckable(true);
-                    chip.setRippleColor(getResources().getColorStateList(R.color.background));
+                    chip.setRippleColor(getResources().getColorStateList(R.color.colorBackground));
                     cg_tags.addView(chip);
                 }
             }

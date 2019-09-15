@@ -9,7 +9,7 @@
 "guestGoals": 0,
 "review": "Good game, well played.",
 "date": "01.09.2019",
-"tags": []
+"tags": ["Live","Barselona","Liverpool","Play-off"]
 },
 {
 "stadium": "Santiago Bernabeu",
@@ -20,7 +20,7 @@
 "guestGoals": 0,
 "review": "What a crazy game!",
 "date": "Live",
-"tags": ["Hot"]
+"tags": ["Hot","Barselona","Real Madrid"]
 }
 ],
 "articles": [
@@ -35,7 +35,7 @@
 "https://bombardir.nekkimobile.ru/images/nut_articles/image/81e2084a2651160eaa69768e28ff0bf0.jpeg",
 "https://bombardir.nekkimobile.ru/images/nut_articles/image/9716be63b33e6c0b190f37d49c7d4b1c.jpeg"
 ],
-"tags": []
+"tags": ["Russia","Scotland","Qualification"]
 }
 ],
 "teams" :[
@@ -55,5 +55,5 @@
 "site": "https://www.realmadrid.com"
 }
 ],
-"tags": ["Spain","Italy","La Liga","Barselona","Play-off"]
+"tags": ["Spain","Qualification","La Liga","Barselona","Play-off"]
 }

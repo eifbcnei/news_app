@@ -19,22 +19,76 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/srl_refresh"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
         android:background="@color/background"
-        tools:context=".ui.activities.MainActivity">
+        android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_news"
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cg_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_small_8"
+            android:visibility="visible"
+            app:chipSpacingHorizontal="16dp"
+            app:singleLine="false"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_all_posts"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/all_news"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_normal_20"
+                app:checkedIcon="@drawable/ic_fiber_new_24dp"
+                app:chipBackgroundColor="@color/colorAccentDark"
+                app:closeIconTint="@android:color/white"
+                app:rippleColor="@color/background" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_live_matches"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chip_live"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_normal_20"
+                app:checkedIcon="@drawable/ic_live_tv_24dp"
+                app:chipBackgroundColor="@color/colorAccent"
+                app:closeIconTint="@android:color/white"
+                app:rippleColor="@color/background" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_hot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="@string/chip_hot"
+                android:textColor="@android:color/white"
+                app:checkedIcon="@drawable/ic_hot_24dp"
+                app:chipBackgroundColor="@color/colorAccent"
+                app:rippleColor="@color/background" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl_refresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layoutAnimation="@anim/layout_animation_slide_right"
-            tools:listitem="@layout/item_match">
+            android:background="@color/background">
 
-        </androidx.recyclerview.widget.RecyclerView>
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_news"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layoutAnimation="@anim/layout_animation_slide_right"
+                tools:listitem="@layout/item_match">
 
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

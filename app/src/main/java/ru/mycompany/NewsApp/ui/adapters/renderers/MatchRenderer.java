@@ -1,6 +1,8 @@
 package ru.mycompany.NewsApp.ui.adapters.renderers;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +32,15 @@ public class MatchRenderer extends ViewRenderer<Match, MatchViewHolder> {
                 .into(holder.guestTeam);
         holder.hostGoals.setText(Integer.toString(match.getHostGoals()));
         holder.guestGoals.setText(Integer.toString(match.getGuestGoals()));
-        holder.date.setText(match.getDate());
+
+        String date = match.getDate();
+        holder.date.setText(date);
+        if (date.equals("Live")) {
+            holder.date.setTextColor(getContext().getColor(R.color.colorAccent));
+        } else {
+            holder.date.setTextColor(ColorStateList.valueOf(Color.BLACK));
+        }
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

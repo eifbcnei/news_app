@@ -3,7 +3,12 @@
     <string name="bad_internet_warning">Bad Internet connection. Please, try again</string>
     <string name="experts_opinion">Experts\' opinion:</string>
     <string name="teams_divider">-</string>
-    <string name="search_hint">Enter key words...</string>
+    <string name="search_hint">Enter key words…</string>
     <string name="restore_hint">Do you want to restore?</string>
     <string name="restore">Restore</string>
+    <string name="chip_articles">Articles</string>
+    <string name="chip_matches">Matches</string>
+    <string name="chip_live">Live</string>
+    <string name="chip_hot">Hot</string>
+    <string name="all_news">All news</string>
 </resources>

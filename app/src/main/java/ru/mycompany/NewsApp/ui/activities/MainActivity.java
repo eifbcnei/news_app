@@ -1,11 +1,12 @@
 package ru.mycompany.NewsApp.ui.activities;
 
-import android.app.ActivityOptions;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.Toast;
@@ -20,12 +21,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
+
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import ru.mycompany.NewsApp.R;
 import ru.mycompany.NewsApp.models.Article;
@@ -49,6 +54,10 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
     @Bean
     MainAdapter adapter;
 
+    @ViewById
+    ChipGroup cg_tags;
+
+
     @AfterViews
     void initToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -69,10 +78,10 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
     @AfterViews
     void initViewModel() {
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-        viewModel.getVisibleData().observe(this, new Observer<List<NewsItemModel>>() {
+        viewModel.getVisibleData().observe(this, new Observer<CopyOnWriteArrayList<NewsItemModel>>() {
             @Override
-            public void onChanged(List<NewsItemModel> newsItemModels) {
-                if (newsItemModels.isEmpty()) {
+            public void onChanged(CopyOnWriteArrayList<NewsItemModel> newsItemModels) {
+                if (newsItemModels.isEmpty() && !isConnected()) {
                     //If something went wrong notify user
                     Toast.makeText(MainActivity.this, getString(R.string.bad_internet_warning), Toast.LENGTH_LONG).show();
                     return;
@@ -85,8 +94,78 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                 rv_news.scheduleLayoutAnimation();
             }
         });
+        viewModel.getTags().observe(this, new Observer<List<String>>() {
+            @Override
+            public void onChanged(List<String> tags) {
+                for (String tag : tags) {
+                    Chip chip = new Chip(MainActivity.this);
+                    chip.setId(View.generateViewId());
+                    chip.setText(tag);
+                    chip.setChipBackgroundColor(getResources().getColorStateList(R.color.colorAccentDark));
+                    chip.setTextColor(Color.WHITE);
+                    chip.setClickable(true);
+                    chip.setCheckable(true);
+                    chip.setRippleColor(getResources().getColorStateList(R.color.background));
+                    cg_tags.addView(chip);
+                }
+            }
+        });
     }
 
+    private boolean isConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = cm.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+    @AfterViews
+    void filterSelectedTag() {
+        cg_tags.setOnCheckedChangeListener(new ChipGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(ChipGroup chipGroup, int id) {
+                if (id == View.NO_ID) {
+                    //if no chip was selected app would crash
+                    //default chip to be selected - 'all news'
+                    Chip chip_all_posts = findViewById(R.id.chip_all_posts);
+                    chip_all_posts.setChecked(true);
+                    return;
+                }
+                Chip chip = chipGroup.findViewById(id);
+                String text = chip.getText().toString();
+                viewModel.filter(text);
+            }
+        });
+    }
+
+    @AfterViews
+    void onRefreshListenerInit() {
+        srl_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if (isConnected()) {
+                    //if connected try downloading data from server
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            final List<NewsItemModel> updatedData = viewModel.refresh();
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    // LiveData can only be updated on ui thread
+                                    viewModel.onDataUpdated(updatedData);
+                                    srl_refresh.setRefreshing(false);
+                                }
+                            });
+                        }
+                    }).start();
+                } else {
+                    //else stop animation and notify user
+                    srl_refresh.setRefreshing(false);
+                    Toast.makeText(MainActivity.this, getString(R.string.bad_internet_warning), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -110,38 +189,6 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         return super.onCreateOptionsMenu(menu);
     }
 
-    @AfterViews
-    void onRefreshListenerInit() {
-        srl_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-                NetworkInfo activeNetworkInfo = cm.getActiveNetworkInfo();
-                if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
-                    //if connected try downloading data from server
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            final List<NewsItemModel> updatedData = viewModel.refresh();
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    // LiveData can only be updated on ui thread
-                                    viewModel.onDataUpdated(updatedData);
-                                    srl_refresh.setRefreshing(false);
-                                }
-                            });
-                        }
-                    }).start();
-                } else {
-                    //else stop animation
-                    srl_refresh.setRefreshing(false);
-                    Toast.makeText(MainActivity.this, getString(R.string.bad_internet_warning), Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-    }
-
 
     @Override
     public void onNewsItemClick(NewsItemModel item) {
@@ -154,4 +201,5 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                 break;
         }
     }
+
 }

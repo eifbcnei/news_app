@@ -1,6 +1,7 @@
 package ru.mycompany.NewsApp.network;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,6 +30,30 @@ public class Repository {
         data.addAll(new ArticlesDownloader().execute().get());
         Collections.shuffle(data);
         return data;
+    }
+
+    public List<String> getTags() throws ExecutionException, InterruptedException {
+        return new TagsDownloader().execute().get();
+    }
+
+    static class TagsDownloader extends AsyncTask<Void, Void, List<String>> {
+        @Override
+        protected List<String> doInBackground(Void... voids) {
+            try {
+                Response<List<String>> response = Network
+                        .getInstance()
+                        .getApi()
+                        .getTags()
+                        .execute();
+                Log.d("___Tags", response.body().toString());
+                if (response.isSuccessful()) {
+                    return response.body();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return new ArrayList<>();
+        }
     }
 
     static class MatchesDownloader extends AsyncTask<Void, Void, List<Match>> {

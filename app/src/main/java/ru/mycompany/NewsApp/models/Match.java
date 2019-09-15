@@ -6,6 +6,9 @@ import android.os.Parcelable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+import java.util.Objects;
+
 public class Match implements NewsItemModel, Parcelable {
     public final static int TYPE = 0;
     @SerializedName("hostGoals")
@@ -33,8 +36,10 @@ public class Match implements NewsItemModel, Parcelable {
     @SerializedName("guest")
     @Expose
     private String guest_key;
+    @SerializedName("tags")
+    @Expose
+    List<String> tags;
     private transient Team guest;
-
 
     public void setHost(Team host) {
         this.host = host;
@@ -125,6 +130,11 @@ public class Match implements NewsItemModel, Parcelable {
 
     public Team getHost() {
         return host;
+    }
+
+    @Override
+    public List<String> getTags() {
+        return tags;
     }
 
     public Team getGuest() {

@@ -18,4 +18,7 @@ public interface RetrofitImpl {
 
     @GET("teams")
     Call<List<Team>> getTeam(@Query("name") String team);
+
+    @GET("tags")
+    Call<List<String>> getTags();
 }

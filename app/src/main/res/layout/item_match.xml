@@ -44,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_goals_divider"
             android:layout_centerHorizontal="true"
+            android:textColor="@android:color/black"
             tools:text="11.11.2019" />
 
         <TextView

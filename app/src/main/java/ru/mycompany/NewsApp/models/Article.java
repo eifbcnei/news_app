@@ -7,6 +7,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Article implements NewsItemModel, Parcelable {
     public final static int TYPE = 1;
@@ -28,6 +29,9 @@ public class Article implements NewsItemModel, Parcelable {
     @SerializedName("bonusPhotosUrls")
     @Expose
     private List<String> bonusPhotosUrls;
+    @SerializedName("tags")
+    @Expose
+    private List<String> tags;
 
     protected Article(Parcel in) {
         title = in.readString();
@@ -89,6 +93,11 @@ public class Article implements NewsItemModel, Parcelable {
 
     public String getSource() {
         return source;
+    }
+
+    @Override
+    public List<String> getTags() {
+        return tags;
     }
 
     @Override

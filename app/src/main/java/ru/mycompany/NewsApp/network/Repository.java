@@ -1,7 +1,6 @@
 package ru.mycompany.NewsApp.network;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -45,7 +44,6 @@ public class Repository {
                         .getApi()
                         .getTags()
                         .execute();
-                Log.d("___Tags", response.body().toString());
                 if (response.isSuccessful()) {
                     return response.body();
                 }

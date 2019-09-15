@@ -3,7 +3,6 @@ package ru.mycompany.NewsApp.ui.activities;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -82,7 +81,6 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         viewModel.getVisibleData().observe(this, new Observer<CopyOnWriteArrayList<NewsItemModel>>() {
             @Override
             public void onChanged(CopyOnWriteArrayList<NewsItemModel> newsItemModels) {
-                Log.d("___onDataChanged", newsItemModels.toString());
                 if (newsItemModels.isEmpty() && !isConnected()) {
                     //If something went wrong notify user
                     Toast.makeText(MainActivity.this, getString(R.string.bad_internet_warning), Toast.LENGTH_LONG).show();
@@ -99,6 +97,13 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         viewModel.getTags().observe(this, new Observer<List<String>>() {
             @Override
             public void onChanged(List<String> tags) {
+                //default chips are : all news,live,hot
+                final int DEFAULT_CHIPS_COUNT = 3;
+                if (cg_tags.getChildCount() > DEFAULT_CHIPS_COUNT) {
+                    //if tags were updated then remove not default tags
+                    //and then add new tags
+                    cg_tags.removeViews(DEFAULT_CHIPS_COUNT, cg_tags.getChildCount() - DEFAULT_CHIPS_COUNT);
+                }
                 for (String tag : tags) {
                     Chip chip = new Chip(MainActivity.this);
                     chip.setId(View.generateViewId());
@@ -117,7 +122,8 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
     private boolean isConnected() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = cm.getActiveNetworkInfo();
-        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+        boolean isConnected = activeNetworkInfo != null && activeNetworkInfo.isConnected();
+        return isConnected;
     }
 
     @AfterViews
@@ -133,8 +139,8 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                     return;
                 }
                 Chip chip = chipGroup.findViewById(id);
-                String text = chip.getText().toString();
-                viewModel.filter(text);
+                String tag = chip.getText().toString();
+                viewModel.filter(tag);
             }
         });
     }
@@ -144,7 +150,6 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         srl_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                Log.d("___onRefresh", Boolean.toString(isConnected()));
                 if (isConnected()) {
                     //if connected try downloading data from server
                     new Thread(new Runnable() {
@@ -192,7 +197,6 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         });
         return super.onCreateOptionsMenu(menu);
     }
-
 
     @Override
     public void onNewsItemClick(NewsItemModel item) {

@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
     ChipGroup cg_tags;
     @ViewById
     Chip chip_all_posts;
+    @ViewById SearchView sv_search;
 
     @AfterViews
     void initToolbar() {
@@ -65,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         toolbar.setNavigationIcon(null);
 
         final ImageButton settings = findViewById(R.id.ib_settings);
-        final SearchView search = findViewById(R.id.sv_search);
 
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,22 +74,22 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
             }
         });
 
-        search.setOnSearchClickListener(new View.OnClickListener() {
+        sv_search.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 settings.setVisibility(View.GONE);
             }
         });
-        //hide settings button when search view is expanded
+        //hide settings button when sv_search view is expanded
         //else show
-        search.setOnCloseListener(new SearchView.OnCloseListener() {
+        sv_search.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
             public boolean onClose() {
                 settings.setVisibility(View.VISIBLE);
                 return false;
             }
         });
-        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        sv_search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 viewModel.onSearchRequested(query);
@@ -102,6 +102,15 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                 return true;
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (!sv_search.isIconified()) {
+            sv_search.setIconified(true);
+        } else {
+            super.onBackPressed();
+        }
     }
 
     @AfterViews

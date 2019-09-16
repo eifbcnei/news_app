@@ -23,6 +23,7 @@
 
                 <ImageButton
                     android:id="@+id/ib_settings"
+                    style="@style/Widget.AppCompat.ImageButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -36,7 +37,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    style="@style/SearchAutoCompleteTextView"
                     android:layout_marginRight="@dimen/spacing_small_8"
                     android:layout_toLeftOf="@id/ib_settings"
                     app:queryHint="@string/search_hint"

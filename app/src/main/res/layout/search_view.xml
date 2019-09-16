@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:inputType="textPersonName"
     android:maxWidth="9999dp"
-    app:queryHint="@string/search_hint">
+    app:queryHint="@string/search_hint"
+    >
 
 </androidx.appcompat.widget.SearchView>

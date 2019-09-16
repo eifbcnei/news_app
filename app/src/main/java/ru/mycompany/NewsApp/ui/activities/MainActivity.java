@@ -56,13 +56,15 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
 
     @ViewById
     ChipGroup cg_tags;
-
+    @ViewById
+    Chip chip_all_posts;
 
     @AfterViews
     void initToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationIcon(null);
     }
 
     @AfterViews
@@ -104,17 +106,21 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                     //and then add new tags
                     cg_tags.removeViews(DEFAULT_CHIPS_COUNT, cg_tags.getChildCount() - DEFAULT_CHIPS_COUNT);
                 }
-                for (String tag : tags) {
-                    Chip chip = new Chip(MainActivity.this);
-                    chip.setId(View.generateViewId());
-                    chip.setText(tag);
-                    chip.setChipBackgroundColor(getResources().getColorStateList(R.color.colorAccentDark));
-                    chip.setTextColor(Color.WHITE);
-                    chip.setClickable(true);
-                    chip.setCheckable(true);
-                    chip.setRippleColor(getResources().getColorStateList(R.color.colorBackground));
-                    cg_tags.addView(chip);
-                }
+
+                //if tags were updated set default checked
+                chip_all_posts.setChecked(true);
+
+                    for (String tag : tags) {
+                        Chip chip = new Chip(MainActivity.this);
+                        chip.setId(View.generateViewId());
+                        chip.setText(tag);
+                        chip.setChipBackgroundColor(getResources().getColorStateList(R.color.colorAccentDark));
+                        chip.setTextColor(Color.WHITE);
+                        chip.setClickable(true);
+                        chip.setCheckable(true);
+                        chip.setRippleColor(getResources().getColorStateList(R.color.colorBackground));
+                        cg_tags.addView(chip);
+                    }
             }
         });
     }
@@ -134,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                 if (id == View.NO_ID) {
                     //if no chip was selected app would crash
                     //default chip to be selected - 'all news'
-                    Chip chip_all_posts = findViewById(R.id.chip_all_posts);
+                    chip_all_posts = findViewById(R.id.chip_all_posts);
                     chip_all_posts.setChecked(true);
                     return;
                 }

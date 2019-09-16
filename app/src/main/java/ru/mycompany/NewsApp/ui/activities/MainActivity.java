@@ -3,12 +3,10 @@ package ru.mycompany.NewsApp.ui.activities;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -65,6 +63,45 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(null);
+
+        final ImageButton settings = findViewById(R.id.ib_settings);
+        final SearchView search = findViewById(R.id.sv_search);
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SettingsActivity_.intent(MainActivity.this).start();
+            }
+        });
+
+        search.setOnSearchClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                settings.setVisibility(View.GONE);
+            }
+        });
+        //hide settings button when search view is expanded
+        //else show
+        search.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                settings.setVisibility(View.VISIBLE);
+                return false;
+            }
+        });
+        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                viewModel.onSearchRequested(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                viewModel.onSearchRequested(newText);
+                return true;
+            }
+        });
     }
 
     @AfterViews
@@ -110,17 +147,17 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                 //if tags were updated set default checked
                 chip_all_posts.setChecked(true);
 
-                    for (String tag : tags) {
-                        Chip chip = new Chip(MainActivity.this);
-                        chip.setId(View.generateViewId());
-                        chip.setText(tag);
-                        chip.setChipBackgroundColor(getResources().getColorStateList(R.color.colorAccentDark));
-                        chip.setTextColor(Color.WHITE);
-                        chip.setClickable(true);
-                        chip.setCheckable(true);
-                        chip.setRippleColor(getResources().getColorStateList(R.color.colorBackground));
-                        cg_tags.addView(chip);
-                    }
+                for (String tag : tags) {
+                    Chip chip = new Chip(MainActivity.this);
+                    chip.setId(View.generateViewId());
+                    chip.setText(tag);
+                    chip.setChipBackgroundColor(getResources().getColorStateList(R.color.colorAccentDark));
+                    chip.setTextColor(Color.WHITE);
+                    chip.setClickable(true);
+                    chip.setCheckable(true);
+                    chip.setRippleColor(getResources().getColorStateList(R.color.colorBackground));
+                    cg_tags.addView(chip);
+                }
             }
         });
     }
@@ -128,8 +165,7 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
     private boolean isConnected() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = cm.getActiveNetworkInfo();
-        boolean isConnected = activeNetworkInfo != null && activeNetworkInfo.isConnected();
-        return isConnected;
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
     @AfterViews
@@ -180,28 +216,6 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                 }
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_search, menu);
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView search = (SearchView) searchItem.getActionView();
-        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                viewModel.onSearchRequested(query);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                viewModel.onSearchRequested(newText);
-                return true;
-            }
-        });
-        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

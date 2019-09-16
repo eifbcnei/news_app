@@ -11,4 +11,6 @@
     <string name="chip_live">Live</string>
     <string name="chip_hot">Hot</string>
     <string name="all_news">All news</string>
+    <string name="settings">Settings</string>
+    <string name="search">Search</string>
 </resources>

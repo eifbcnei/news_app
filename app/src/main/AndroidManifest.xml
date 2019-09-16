@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.activities.SettingsActivity_"></activity>
         <activity
             android:name=".ui.activities.SplashActivity"
             android:theme="@style/SplashTheme">
@@ -24,9 +25,7 @@
         </activity>
         <activity android:name=".ui.activities.MatchActivity_" />
         <activity android:name=".ui.activities.ArticleActivity_" />
-        <activity android:name=".ui.activities.MainActivity_">
-
-        </activity>
+        <activity android:name=".ui.activities.MainActivity_"></activity>
     </application>
 
 </manifest>

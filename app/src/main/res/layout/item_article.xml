@@ -7,7 +7,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="?attr/themeColorCardBackground"
+        tools:background="@color/white">
 
         <ImageView
             android:id="@+id/iv_article_photo"
@@ -15,7 +17,7 @@
             android:layout_height="@dimen/photo_big_110"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/spacing_normal_24"
-            tools:background="@color/colorAccent" />
+            tools:background="@color/red" />
 
         <TextView
             android:id="@+id/tv_article_title"
@@ -28,8 +30,9 @@
             android:fontFamily="sans-serif-medium"
             android:maxLength="75"
             android:maxLines="2"
-            android:textColor="@android:color/black"
-            tools:text="Very very long article title to test multiline attribute." />
+            android:textColor="?attr/themeColorTextPrimary"
+            tools:text="Very very long article title to test multiline attribute."
+            tools:textColor="@color/black" />
 
         <TextView
             android:id="@+id/tv_article_description"
@@ -40,7 +43,9 @@
             android:layout_toRightOf="@+id/iv_article_photo"
             android:maxLength="230"
             android:maxLines="8"
-            tools:text="Some very long text which is general description of the article..." />
+            android:textColor="?attr/themeColorTextSecondary"
+            tools:text="Some very long text which is general description of the article..."
+            tools:textColor="@color/gray" />
 
         <TextView
             android:id="@+id/tv_source"
@@ -49,6 +54,8 @@
             android:layout_below="@id/iv_article_photo"
             android:layout_margin="@dimen/spacing_small_8"
             android:layout_toLeftOf="@id/tv_article_description"
-            tools:text="Mail.ru" />
+            android:textColor="?attr/themeColorTextSecondary"
+            tools:text="Mail.ru"
+            tools:textColor="@color/gray" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

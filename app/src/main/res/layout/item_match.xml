@@ -9,7 +9,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="?attr/themeColorCardBackground">
 
         <ImageView
             android:id="@+id/iv_team_host"
@@ -26,8 +27,10 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/spacing_huge_64"
             android:layout_toRightOf="@id/iv_team_host"
+            android:textColor="?attr/themeColorTextSecondary"
             android:textSize="32sp"
-            tools:text="5" />
+            tools:text="5"
+            tools:textColor="@color/gray" />
 
         <TextView
             android:id="@+id/tv_goals_divider"
@@ -36,7 +39,9 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="@string/teams_divider"
-            android:textSize="@dimen/text_large_32" />
+            android:textColor="?attr/themeColorTextSecondary"
+            android:textSize="@dimen/text_large_32"
+            tools:textColor="@color/gray" />
 
         <TextView
             android:id="@+id/tv_date"
@@ -44,8 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_goals_divider"
             android:layout_centerHorizontal="true"
-            android:textColor="@android:color/black"
-            tools:text="11.11.2019" />
+            android:textColor="?attr/themeColorTextPrimary"
+            tools:text="11.11.2019"
+            tools:textColor="@color/black" />
 
         <TextView
             android:id="@+id/tv_guest_goals"
@@ -54,8 +60,10 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/spacing_huge_64"
             android:layout_toLeftOf="@id/iv_team_guest"
+            android:textColor="?attr/themeColorTextSecondary"
             android:textSize="@dimen/text_large_32"
-            tools:text="2" />
+            tools:text="2"
+            tools:textColor="@color/gray" />
 
         <ImageView
             android:id="@+id/iv_team_guest"

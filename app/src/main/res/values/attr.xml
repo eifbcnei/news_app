@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="themeColorPrimary" format="reference" />
+    <attr name="themeColorPrimaryDark" format="reference" />
+    <attr name="themeColorAccent" format="reference" />
+    <attr name="themeColorAccentDark" format="reference" />
+    <attr name="themeColorBackground" format="reference" />
+    <attr name="themeColorCardBackground" format="reference" />
+    <attr name="themeColorTextPrimary" format="reference" />
+    <attr name="themeColorTextSecondary" format="reference" />
+    <attr name="themeColorTextAccent" format="reference" />
+    <attr name="themeColorIcon" format="reference" />
+
+</resources>

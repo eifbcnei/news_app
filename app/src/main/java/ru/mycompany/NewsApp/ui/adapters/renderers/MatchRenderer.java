@@ -36,7 +36,7 @@ public class MatchRenderer extends ViewRenderer<Match, MatchViewHolder> {
         String date = match.getDate();
         holder.date.setText(date);
         if (date.equals("Live")) {
-            holder.date.setTextColor(getContext().getColor(R.color.colorAccent));
+            holder.date.setTextColor(getContext().getColor(R.color.red));
         } else {
             holder.date.setTextColor(ColorStateList.valueOf(Color.BLACK));
         }

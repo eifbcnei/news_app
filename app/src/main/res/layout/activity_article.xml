@@ -34,7 +34,7 @@
                 android:background="@android:color/transparent"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:titleTextColor="@android:color/white" />
+                app:titleTextColor="?attr/themeColorTextPrimary" />
 
             <ImageButton
                 android:id="@+id/ib_share"
@@ -54,19 +54,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"
+        android:background="?attr/themeColorBackground"
         android:fillViewport="true"
-        android:background="@color/colorBackground"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        tools:background="@color/light_gray">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_small_8"
-            android:layout_marginRight="@dimen/spacing_small_8"
             android:layout_marginTop="@dimen/spacing_small_8"
+            android:layout_marginRight="@dimen/spacing_small_8"
             android:layout_marginBottom="@dimen/spacing_small_8"
-            android:background="@android:color/white"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="?attr/themeColorCardBackground"
+            tools:background="@color/white">
 
             <TextView
                 android:id="@+id/tv_title"
@@ -74,9 +76,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/spacing_small_8"
                 android:fontFamily="sans-serif-medium"
-                android:textColor="@android:color/black"
+                android:textColor="?attr/themeColorTextPrimary"
                 android:textSize="@dimen/text_large_32"
-                tools:text="Title" />
+                tools:text="Title"
+                tools:textColor="@color/black" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_bonus_photos"
@@ -92,8 +95,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/spacing_little_4"
                 android:fontFamily="sans-serif-medium"
+                android:textColor="?attr/themeColorTextSecondary"
                 android:textSize="@dimen/text_normal_20"
-                tools:text="Content" />
+                tools:text="Content"
+                tools:textColor="@color/light_gray" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,9 +1,11 @@
 package ru.mycompany.NewsApp.ui.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,11 +19,12 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Extra;
 import org.androidannotations.annotations.ViewById;
 
+import ru.mycompany.NewsApp.AppPreferences;
 import ru.mycompany.NewsApp.R;
 import ru.mycompany.NewsApp.models.Article;
 import ru.mycompany.NewsApp.ui.adapters.BonusPhotoAdapter;
 
-@EActivity(R.layout.activity_article)
+@EActivity
 public class ArticleActivity extends AppCompatActivity {
     @ViewById
     RecyclerView rv_bonus_photos;
@@ -35,6 +38,13 @@ public class ArticleActivity extends AppCompatActivity {
     TextView tv_content;
     @Extra("Article")
     Article article;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setTheme(AppPreferences.getCurrentTheme());
+        setContentView(R.layout.activity_article);
+    }
 
     @Click(R.id.ib_share)
     void onShare() {

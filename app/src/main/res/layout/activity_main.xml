@@ -15,22 +15,22 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:titleTextColor="@android:color/white">
+            app:titleTextColor="?attr/themeColorTextAccent">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize">
 
                 <ImageButton
-                    android:id="@+id/ib_settings"
+                    android:id="@+id/ib_theme_swap"
                     style="@style/Widget.AppCompat.ImageButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/spacing_small_8"
-                    android:background="@color/colorPrimary"
-                    android:src="@drawable/ic_settings_24dp" />
+                    android:background="?attr/themeColorPrimary"
+                    android:src="@drawable/ic_brightness_24dp" />
 
                 <androidx.appcompat.widget.SearchView
                     android:id="@+id/sv_search"
@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/spacing_small_8"
-                    android:layout_toLeftOf="@id/ib_settings"
+                    android:layout_toLeftOf="@id/ib_theme_swap"
                     app:queryHint="@string/search_hint"
                     app:searchIcon="@drawable/ic_search_24dp" />
 
@@ -52,9 +52,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
-        android:background="@color/colorBackground"
+        android:background="?attr/themeColorBackground"
         android:orientation="vertical">
 
+      <HorizontalScrollView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/cg_tags"
             android:layout_width="match_parent"
@@ -62,9 +65,8 @@
             android:layout_margin="@dimen/spacing_small_8"
             android:visibility="visible"
             app:chipSpacingHorizontal="16dp"
-            app:singleLine="false"
+            app:singleLine="true"
             app:singleSelection="true">
-
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_all_posts"
                 style="@style/Widget.MaterialComponents.Chip.Filter"
@@ -72,12 +74,12 @@
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:text="@string/all_news"
-                android:textColor="@android:color/white"
+                android:textColor="?attr/themeColorTextAccent"
                 android:textSize="@dimen/text_normal_20"
                 app:checkedIcon="@drawable/ic_fiber_new_24dp"
-                app:chipBackgroundColor="@color/colorAccentDark"
+                app:chipBackgroundColor="?attr/themeColorAccentDark"
                 app:closeIconTint="@android:color/white"
-                app:rippleColor="@color/colorBackground" />
+                app:rippleColor="?attr/themeColorBackground" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_live_matches"
@@ -85,12 +87,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/chip_live"
-                android:textColor="@android:color/white"
+                android:textColor="?attr/themeColorTextAccent"
                 android:textSize="@dimen/text_normal_20"
                 app:checkedIcon="@drawable/ic_live_tv_24dp"
-                app:chipBackgroundColor="@color/colorAccent"
+                app:chipBackgroundColor="?attr/themeColorAccent"
                 app:closeIconTint="@android:color/white"
-                app:rippleColor="@color/colorBackground" />
+                app:rippleColor="?attr/themeColorBackground" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_hot"
@@ -98,17 +100,18 @@
                 android:layout_height="wrap_content"
                 android:checkable="true"
                 android:text="@string/chip_hot"
-                android:textColor="@android:color/white"
+                android:textColor="?attr/themeColorTextAccent"
                 app:checkedIcon="@drawable/ic_hot_24dp"
-                app:chipBackgroundColor="@color/colorAccent"
-                app:rippleColor="@color/colorBackground" />
+                app:chipBackgroundColor="?attr/themeColorAccent"
+                app:rippleColor="?attr/themeColorBackground"/>
         </com.google.android.material.chip.ChipGroup>
-
+      </HorizontalScrollView>
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/srl_refresh"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorBackground">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="?attr/themeColorBackground">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_news"
@@ -119,5 +122,6 @@
 
             </androidx.recyclerview.widget.RecyclerView>
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,14 +1,15 @@
 package ru.mycompany.NewsApp.ui.activities;
 
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
@@ -30,6 +31,7 @@ import org.androidannotations.annotations.ViewById;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import ru.mycompany.NewsApp.AppPreferences;
 import ru.mycompany.NewsApp.R;
 import ru.mycompany.NewsApp.models.Article;
 import ru.mycompany.NewsApp.models.Match;
@@ -41,9 +43,8 @@ import ru.mycompany.NewsApp.ui.adapters.renderers.ArticleRenderer;
 import ru.mycompany.NewsApp.ui.adapters.renderers.MatchRenderer;
 import ru.mycompany.NewsApp.viewmodels.MainViewModel;
 
-@EActivity(R.layout.activity_main)
+@EActivity
 public class MainActivity extends AppCompatActivity implements NewsItemClickListener {
-
     @ViewById
     RecyclerView rv_news;
     @ViewById
@@ -51,12 +52,19 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
     private MainViewModel viewModel;
     @Bean
     MainAdapter adapter;
-
     @ViewById
     ChipGroup cg_tags;
     @ViewById
     Chip chip_all_posts;
-    @ViewById SearchView sv_search;
+    @ViewById
+    SearchView sv_search;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setTheme(AppPreferences.getCurrentTheme());
+        setContentView(R.layout.activity_main);
+    }
 
     @AfterViews
     void initToolbar() {
@@ -65,27 +73,28 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(null);
 
-        final ImageButton settings = findViewById(R.id.ib_settings);
+        final ImageButton btnThemeChange = findViewById(R.id.ib_theme_swap);
 
-        settings.setOnClickListener(new View.OnClickListener() {
+        btnThemeChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SettingsActivity_.intent(MainActivity.this).start();
+                AppPreferences.switchTheme();
+                recreate();
             }
         });
-
+        //hide btnThemeChange when sv_search view is expanded
+        //else show
         sv_search.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                settings.setVisibility(View.GONE);
+                btnThemeChange.setVisibility(View.GONE);
             }
         });
-        //hide settings button when sv_search view is expanded
-        //else show
+
         sv_search.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
             public boolean onClose() {
-                settings.setVisibility(View.VISIBLE);
+                btnThemeChange.setVisibility(View.VISIBLE);
                 return false;
             }
         });
@@ -114,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
     }
 
     @AfterViews
-    void initAdapter() {
+    void initMainAdapter() {
         adapter.registerRenderer(new MatchRenderer(Match.TYPE, this));
         adapter.registerRenderer(new ArticleRenderer(Article.TYPE, this));
         rv_news.setLayoutManager(new LinearLayoutManager(this));
@@ -155,16 +164,18 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
 
                 //if tags were updated set default checked
                 chip_all_posts.setChecked(true);
+                boolean isNightTheme = AppPreferences.isSetNightTheme();
 
                 for (String tag : tags) {
                     Chip chip = new Chip(MainActivity.this);
                     chip.setId(View.generateViewId());
                     chip.setText(tag);
-                    chip.setChipBackgroundColor(getResources().getColorStateList(R.color.colorAccentDark));
-                    chip.setTextColor(Color.WHITE);
+                    chip.setChipBackgroundColor(getResources().getColorStateList(isNightTheme ?
+                            R.color.dark_blue : R.color.violet));
+                    chip.setTextColor(getResources().getColor(isNightTheme ? R.color.orange : R.color.white));
                     chip.setClickable(true);
                     chip.setCheckable(true);
-                    chip.setRippleColor(getResources().getColorStateList(R.color.colorBackground));
+                    chip.setRippleColor(getResources().getColorStateList(isNightTheme ? R.color.light_gray : R.color.light_blue));
                     cg_tags.addView(chip);
                 }
             }
@@ -238,5 +249,4 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
                 break;
         }
     }
-
 }

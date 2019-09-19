@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_margin="@dimen/card_edge_spacing">
+
+    <ImageView
+        android:id="@+id/iv_event_icon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        tools:src="@drawable/ic_ball" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_event_icon"
+        android:layout_centerHorizontal="true"
+        tools:text="55" />
+
+    <TextView
+        android:id="@+id/tv_host_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/spacing_normal_24"
+        android:layout_toLeftOf="@id/iv_event_icon"
+        android:textColor="?attr/themeColorTextPrimary"
+        android:textSize="@dimen/text_large_32"
+        tools:text="Player1"
+        tools:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tv_guest_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/spacing_normal_24"
+        android:layout_toRightOf="@id/iv_event_icon"
+        android:textColor="?attr/themeColorTextPrimary"
+        android:textSize="@dimen/text_large_32"
+        tools:text="Player2"
+        tools:textColor="@color/black" />
+</RelativeLayout>

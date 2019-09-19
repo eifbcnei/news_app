@@ -28,7 +28,7 @@
             tools:textColor="@color/light_gray" />
 
         <TextView
-            android:id="@+id/tv_game_type"
+            android:id="@+id/tv_game_stage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_date"
@@ -41,7 +41,7 @@
             android:id="@+id/tv_stadium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_game_type"
+            android:layout_below="@+id/tv_game_stage"
             android:layout_centerHorizontal="true"
             android:textColor="?attr/themeColorTextPrimary"
             tools:text="Some stadium"
@@ -79,11 +79,11 @@
             android:layout_below="@id/tv_stadium"
             android:layout_marginLeft="@dimen/spacing_small_8"
             android:layout_marginTop="44dp"
-            android:textColor="?attr/themeColorTextPrimary"
             android:layout_toRightOf="@id/tv_teams_divider"
+            android:textColor="?attr/themeColorTextPrimary"
             android:textSize="@dimen/text_large_32"
-            tools:textColor="@color/black"
-            tools:text="5" />
+            tools:text="5"
+            tools:textColor="@color/black" />
 
         <ImageView
             android:id="@+id/iv_host_emblem"
@@ -147,6 +147,25 @@
             android:textSize="@dimen/text_normal_20"
             tools:text="Some words from experts"
             tools:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/tv_events_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_review"
+            android:layout_centerHorizontal="true"
+            android:text="Match events:"
+            android:textColor="?attr/themeColorTextPrimary"
+            android:textSize="@dimen/text_large_32"
+            tools:textColor="@color/black" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_match_events"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_events_header"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            tools:listitem="@layout/item_match_event" />
 
     </RelativeLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

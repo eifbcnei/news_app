@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
@@ -21,6 +23,7 @@ import ru.mycompany.NewsApp.AppPreferences;
 import ru.mycompany.NewsApp.R;
 import ru.mycompany.NewsApp.models.Match;
 import ru.mycompany.NewsApp.models.Team;
+import ru.mycompany.NewsApp.ui.adapters.MatchEventsAdapter;
 
 
 @EActivity
@@ -47,6 +50,8 @@ public class MatchActivity extends AppCompatActivity {
     TextView tv_guest_team;
     @ViewById
     TextView tv_review;
+    @ViewById
+    RecyclerView rv_match_events;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -73,6 +78,10 @@ public class MatchActivity extends AppCompatActivity {
         Picasso.with(this)
                 .load(guest.getEmblem())
                 .into(iv_guest_emblem);
+        MatchEventsAdapter adapter = new MatchEventsAdapter(this, match.getMatchEvents());
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        rv_match_events.setLayoutManager(manager);
+        rv_match_events.setAdapter(adapter);
     }
 
     @Click(R.id.iv_host_emblem)

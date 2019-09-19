@@ -7,7 +7,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
-import java.util.Objects;
 
 public class Match implements NewsItemModel, Parcelable {
     public final static int TYPE = 0;
@@ -39,6 +38,14 @@ public class Match implements NewsItemModel, Parcelable {
     @SerializedName("tags")
     @Expose
     List<String> tags;
+    @SerializedName("matchEvents")
+    @Expose
+    private List<MatchEvent> matchEvents;
+
+    public List<MatchEvent> getMatchEvents() {
+        return matchEvents;
+    }
+
     private transient Team guest;
 
     public void setHost(Team host) {

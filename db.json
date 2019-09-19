@@ -1,72 +1,139 @@
 {
-"matches" : [
-{
-"stadium": "Anfield",
-"gameType": "Play-off",
-"host": "Liverpool",
-"guest": "Barselona",
-"hostGoals": 4,
-"guestGoals": 0,
-"review": "Good game, well played.",
-"date": "01.09.2019",
-"tags": ["Hot","Barselona","Liverpool","Play-off","Spain"]
-},
-{
-"stadium": "Santiago Bernabeu",
-"gameType": "La Liga",
-"host": "Real Madrid",
-"guest": "Barselona",
-"hostGoals": 0,
-"guestGoals": 0,
-"review": "What a crazy game!",
-"date": "Live",
-"tags": ["Live","Barselona","Real Madrid","La Liga","Spain"]
-}
-],
-"articles": [
-{
-"title": "Построил для Моуринью непроходимую защиту, мало самостоятельно тренировал – все это о тренере Шотландии",
-"description": "Май 2019-го: сборная Шотландии прощается с Алексом Маклишем и занимается поиском нового тренера. Тогда шотландский Футбольный Союз сделал неочевидный шаг – пригласил Стива Кларка на должность главного тренера.",
-"content": "В сезоне-2005/06, когда «Челси» защитил титул чемпиона АПЛ, у Моуринью спросили о вкладе его помощников в этот успех. «Стив – чудесный человек. Работа ассистента заключается в том, чтобы помогать главному тренеру в любое время суток. Стив готов поработать в любую минуту. Не знаю, будет ли он тренировать самостоятельно, но помощник из него отличный».В том сезоне «Челси» оторвался от «МЮ», который был вторым, на восемь очков. За год «Челси» пропустил всего 22 гола и в этом есть прямой вклад Стива Кларка. Кларк был защитником , поэтому Моур обязал его контролировать оборону «Челси». Во-первых, Кларк настоял на том, чтобы клуб взял Асьера Дель Орно. Во-вторых, Кларк самостоятельно прорабатывал связки. Так в центре у «Челси» в АПЛ постоянно играли Галлас и Терри. Хотя Моуринью изначально задумывался о связке Терри-Карвалью.Моуринью правильно характеризовал Кларка – он настоящий трудоголик. Он пришел к выводу, что лучше защитникам «Челси» действовать в этой игре посмелее и помогать полузащитникам и форвардам в атаке, а не только при стандартах. Итог – 3:0 в пользу «Челси».",
-"source": "transfermarkt.com",
-"mainPhotoUrl": "https://bombardir.nekkimobile.ru/images/nut_articles/image/79a4fac016d97f03a02d1e36e5c7aa6f.jpeg",
-"bonusPhotosUrls": [
-"https://bombardir.nekkimobile.ru/images/nut_articles/image/922e9257c200c93c4a14a3b9d70a4263.jpg",
-"https://bombardir.nekkimobile.ru/images/nut_articles/image/81e2084a2651160eaa69768e28ff0bf0.jpeg",
-"https://bombardir.nekkimobile.ru/images/nut_articles/image/9716be63b33e6c0b190f37d49c7d4b1c.jpeg"
-],
-"tags": ["Russia","Scotland","Qualification"]
-},
-{
-"title": "Монако показывает, как не надо тратить 140 миллионов. Пропускает больше всех в лиге, упускает победы, идет на 19-м месте",
-"description": "Монако в последние два сезона – тихий ужас. В прошлом: увольнение Жардима, приглашение Анри, возвращение Жардима и 17 место в чемпионате. В этом – два очка после пяти туров и предпоследняя строчка в таблице.",
-"content": "Летом клуб потратил 140 миллионов – двенадцатый результат по тратам в мире. «Тоттенхэм», «ПСЖ», «Наполи» и «Боруссия» в это окно потратили меньше. В пяти турах «Монако» пропустил 14 голов – больше всех в лиге. Ближайший преследователь по худшему результату «Анже» – у них девять пропущенных, но зато уже есть три победы. Первые два тура «Монако» – мрак, мрак (два поражения по 0:3). Третий и четвертый тур – вели в счете, но упускали преимущество и оба матча заканчивали со счетом 2:2. Пятый тур против «Марселя» – вели 2:0 к 26-й минуте. Спустя 40 минут минут игрового времени пропустил четыре гола и проиграли.",
-"source": "francefootball.com",
-"mainPhotoUrl": "https://bombardir.nekkimobile.ru/images/nut_articles/image/02f7da0f7d8e12591a3fff0fa3792c58.jpg",
-"bonusPhotosUrls": [
-"https://pbs.twimg.com/media/EEiPbaKWwAEW_Za?format=jpg&name=small",
-"https://bombardir.nekkimobile.ru/images/nut_articles/image/a9a330589c6f635874b2159dc29eb690.jpg",
-"https://bombardir.nekkimobile.ru/images/nut_articles/image/4601cdb2d039dcd211548de96db24b28.jpg"
-],
-"tags": ["France","Liga 1"]
-}
-],
-"teams" :[
-{
-"name": "Liverpool",
-"emblem": "https://upload.wikimedia.org/wikipedia/ru/thumb/0/0a/FC_Liverpool.svg/800px-FC_Liverpool.svg.png",
-"site": "https://www.liverpoolfc.com/"
-},
-{
-"name": "Barselona",
-"emblem": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
-"site": "https://www.fcbarcelona.com/en/"
-},
-{
-"name": "Real Madrid",
-"emblem": "https://upload.wikimedia.org/wikipedia/ru/9/98/Real_Madrid.png",
-"site": "https://www.realmadrid.com"
-}
-],
-"tags": ["Spain","Qualification","La Liga","Barselona","Play-off","Liga 1","France"]
+  "matches": [
+    {
+      "stadium": "Anfield",
+      "gameType": "Play-off",
+      "host": "Liverpool",
+      "guest": "Barselona",
+      "hostGoals": 4,
+      "guestGoals": 0,
+      "review": "Good game, well played.",
+      "date": "01.09.2019",
+      "tags": [
+        "Hot",
+        "Barselona",
+        "Liverpool",
+        "Play-off",
+        "Spain"
+      ],
+      "matchEvents": [
+        {
+          "type": "GOAL",
+          "minute": 20,
+          "player": "Salah",
+          "isHostTeamPlayer": true
+        },
+        {
+          "type": "YELLOW_CARD",
+          "minute": 29,
+          "player": "Ter Stegen",
+          "isHostTeamPlayer": false
+        },
+        {
+          "type": "GOAL",
+          "minute": 89,
+          "player": "Ter Stegen",
+          "isHostTeamPlayer": false
+        }
+      ]
+    },
+    {
+      "stadium": "Santiago Bernabeu",
+      "gameType": "La Liga",
+      "host": "Real Madrid",
+      "guest": "Barselona",
+      "hostGoals": 0,
+      "guestGoals": 0,
+      "review": "What a crazy game!",
+      "date": "Live",
+      "tags": [
+        "Live",
+        "Barselona",
+        "Real Madrid",
+        "La Liga",
+        "Spain"
+      ],
+      "matchEvents": [
+        {
+          "type": "GOAL",
+          "minute": 20,
+          "player": "Salah",
+          "isHostTeamPlayer": true
+        },
+        {
+          "type": "YELLOW_CARD",
+          "minute": 29,
+          "player": "Ter Stegen",
+          "isHostTeamPlayer": false
+        },
+        {
+          "type": "GOAL",
+          "minute": 89,
+          "player": "Ter Stegen",
+          "isHostTeamPlayer": false
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "Построил для Моуринью непроходимую защиту, мало самостоятельно тренировал – все это о тренере Шотландии",
+      "description": "Май 2019-го: сборная Шотландии прощается с Алексом Маклишем и занимается поиском нового тренера. Тогда шотландский Футбольный Союз сделал неочевидный шаг – пригласил Стива Кларка на должность главного тренера.",
+      "content": "В сезоне-2005/06, когда «Челси» защитил титул чемпиона АПЛ, у Моуринью спросили о вкладе его помощников в этот успех. «Стив – чудесный человек. Работа ассистента заключается в том, чтобы помогать главному тренеру в любое время суток. Стив готов поработать в любую минуту. Не знаю, будет ли он тренировать самостоятельно, но помощник из него отличный».В том сезоне «Челси» оторвался от «МЮ», который был вторым, на восемь очков. За год «Челси» пропустил всего 22 гола и в этом есть прямой вклад Стива Кларка. Кларк был защитником , поэтому Моур обязал его контролировать оборону «Челси». Во-первых, Кларк настоял на том, чтобы клуб взял Асьера Дель Орно. Во-вторых, Кларк самостоятельно прорабатывал связки. Так в центре у «Челси» в АПЛ постоянно играли Галлас и Терри. Хотя Моуринью изначально задумывался о связке Терри-Карвалью.Моуринью правильно характеризовал Кларка – он настоящий трудоголик. Он пришел к выводу, что лучше защитникам «Челси» действовать в этой игре посмелее и помогать полузащитникам и форвардам в атаке, а не только при стандартах. Итог – 3:0 в пользу «Челси».",
+      "source": "transfermarkt.com",
+      "mainPhotoUrl": "https://bombardir.nekkimobile.ru/images/nut_articles/image/79a4fac016d97f03a02d1e36e5c7aa6f.jpeg",
+      "bonusPhotosUrls": [
+        "https://bombardir.nekkimobile.ru/images/nut_articles/image/922e9257c200c93c4a14a3b9d70a4263.jpg",
+        "https://bombardir.nekkimobile.ru/images/nut_articles/image/81e2084a2651160eaa69768e28ff0bf0.jpeg",
+        "https://bombardir.nekkimobile.ru/images/nut_articles/image/9716be63b33e6c0b190f37d49c7d4b1c.jpeg"
+      ],
+      "tags": [
+        "Russia",
+        "Scotland",
+        "Qualification"
+      ]
+    },
+    {
+      "title": "Монако показывает, как не надо тратить 140 миллионов. Пропускает больше всех в лиге, упускает победы, идет на 19-м месте",
+      "description": "Монако в последние два сезона – тихий ужас. В прошлом: увольнение Жардима, приглашение Анри, возвращение Жардима и 17 место в чемпионате. В этом – два очка после пяти туров и предпоследняя строчка в таблице.",
+      "content": "Летом клуб потратил 140 миллионов – двенадцатый результат по тратам в мире. «Тоттенхэм», «ПСЖ», «Наполи» и «Боруссия» в это окно потратили меньше. В пяти турах «Монако» пропустил 14 голов – больше всех в лиге. Ближайший преследователь по худшему результату «Анже» – у них девять пропущенных, но зато уже есть три победы. Первые два тура «Монако» – мрак, мрак (два поражения по 0:3). Третий и четвертый тур – вели в счете, но упускали преимущество и оба матча заканчивали со счетом 2:2. Пятый тур против «Марселя» – вели 2:0 к 26-й минуте. Спустя 40 минут минут игрового времени пропустил четыре гола и проиграли.",
+      "source": "francefootball.com",
+      "mainPhotoUrl": "https://bombardir.nekkimobile.ru/images/nut_articles/image/02f7da0f7d8e12591a3fff0fa3792c58.jpg",
+      "bonusPhotosUrls": [
+        "https://pbs.twimg.com/media/EEiPbaKWwAEW_Za?format=jpg&name=small",
+        "https://bombardir.nekkimobile.ru/images/nut_articles/image/a9a330589c6f635874b2159dc29eb690.jpg",
+        "https://bombardir.nekkimobile.ru/images/nut_articles/image/4601cdb2d039dcd211548de96db24b28.jpg"
+      ],
+      "tags": [
+        "France",
+        "Liga 1"
+      ]
+    }
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "emblem": "https://upload.wikimedia.org/wikipedia/ru/thumb/0/0a/FC_Liverpool.svg/800px-FC_Liverpool.svg.png",
+      "site": "https://www.liverpoolfc.com/"
+    },
+    {
+      "name": "Barselona",
+      "emblem": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/1024px-FC_Barcelona.svg.png",
+      "site": "https://www.fcbarcelona.com/en/"
+    },
+    {
+      "name": "Real Madrid",
+      "emblem": "https://upload.wikimedia.org/wikipedia/ru/9/98/Real_Madrid.png",
+      "site": "https://www.realmadrid.com"
+    }
+  ],
+  "tags": [
+    "Spain",
+    "Qualification",
+    "La Liga",
+    "Barselona",
+    "Play-off",
+    "Liga 1",
+    "France"
+  ]
 }

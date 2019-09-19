@@ -25,44 +25,21 @@ public class Match implements NewsItemModel, Parcelable {
     @SerializedName("stadium")
     @Expose
     private String stadium;
-    @SerializedName("review")
-    @Expose
-    private String review;
     @SerializedName("host")
     @Expose
     private String host_key;
-    private transient Team host;
+    private Team host;
     @SerializedName("guest")
     @Expose
     private String guest_key;
     @SerializedName("tags")
     @Expose
     List<String> tags;
+    private Team guest;
     @SerializedName("matchEvents")
     @Expose
     private List<MatchEvent> matchEvents;
 
-    public List<MatchEvent> getMatchEvents() {
-        return matchEvents;
-    }
-
-    private transient Team guest;
-
-    public void setHost(Team host) {
-        this.host = host;
-    }
-
-    public void setGuest(Team guest) {
-        this.guest = guest;
-    }
-
-    public String getHost_key() {
-        return host_key;
-    }
-
-    public String getGuest_key() {
-        return guest_key;
-    }
 
     protected Match(Parcel in) {
         hostGoals = in.readInt();
@@ -70,9 +47,12 @@ public class Match implements NewsItemModel, Parcelable {
         date = in.readString();
         gameType = in.readString();
         stadium = in.readString();
-        review = in.readString();
+        host_key = in.readString();
         host = in.readParcelable(Team.class.getClassLoader());
+        guest_key = in.readString();
+        tags = in.createStringArrayList();
         guest = in.readParcelable(Team.class.getClassLoader());
+        matchEvents = in.createTypedArrayList(MatchEvent.CREATOR);
     }
 
     @Override
@@ -82,9 +62,12 @@ public class Match implements NewsItemModel, Parcelable {
         dest.writeString(date);
         dest.writeString(gameType);
         dest.writeString(stadium);
-        dest.writeString(review);
+        dest.writeString(host_key);
         dest.writeParcelable(host, flags);
+        dest.writeString(guest_key);
+        dest.writeStringList(tags);
         dest.writeParcelable(guest, flags);
+        dest.writeTypedList(matchEvents);
     }
 
     @Override
@@ -104,15 +87,29 @@ public class Match implements NewsItemModel, Parcelable {
         }
     };
 
-    public String getReview() {
-        return review;
+    public List<MatchEvent> getMatchEvents() {
+        return matchEvents;
     }
 
+    public void setHost(Team host) {
+        this.host = host;
+    }
+
+    public void setGuest(Team guest) {
+        this.guest = guest;
+    }
+
+    public String getHost_key() {
+        return host_key;
+    }
+
+    public String getGuest_key() {
+        return guest_key;
+    }
 
     public String getGameType() {
         return gameType;
     }
-
 
     public String getStadium() {
         return stadium;
@@ -146,5 +143,22 @@ public class Match implements NewsItemModel, Parcelable {
 
     public Team getGuest() {
         return guest;
+    }
+
+    @Override
+    public String toString() {
+        return "Match{" +
+                "hostGoals=" + hostGoals +
+                ", guestGoals=" + guestGoals +
+                ", date='" + date + '\'' +
+                ", gameType='" + gameType + '\'' +
+                ", stadium='" + stadium + '\'' +
+                ", host_key='" + host_key + '\'' +
+                ", host=" + host +
+                ", guest_key='" + guest_key + '\'' +
+                ", tags=" + tags +
+                ", guest=" + guest +
+                ", matchEvents=" + matchEvents +
+                '}';
     }
 }

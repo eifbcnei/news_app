@@ -3,6 +3,7 @@ package ru.mycompany.NewsApp.ui.activities;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,7 +36,7 @@ public class MatchActivity extends AppCompatActivity {
     @ViewById
     TextView tv_date;
     @ViewById
-    TextView tv_game_type;
+    TextView tv_game_stage;
     @ViewById
     TextView tv_host_goals;
     @ViewById
@@ -48,8 +49,6 @@ public class MatchActivity extends AppCompatActivity {
     TextView tv_host_team;
     @ViewById
     TextView tv_guest_team;
-    @ViewById
-    TextView tv_review;
     @ViewById
     RecyclerView rv_match_events;
 
@@ -64,14 +63,13 @@ public class MatchActivity extends AppCompatActivity {
     void initUI() {
         tv_stadium.setText(match.getStadium());
         tv_date.setText(match.getDate());
-        tv_game_type.setText(match.getGameType());
+        tv_game_stage.setText(match.getGameType());
         tv_host_goals.setText(Integer.toString(match.getHostGoals()));
         tv_guest_goals.setText(Integer.toString(match.getGuestGoals()));
         Team host = match.getHost();
         tv_host_team.setText(host.getName());
         Team guest = match.getGuest();
         tv_guest_team.setText(guest.getName());
-        tv_review.setText(match.getReview());
         Picasso.with(this)
                 .load(host.getEmblem())
                 .into(iv_host_emblem);

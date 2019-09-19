@@ -29,7 +29,7 @@
         android:layout_marginRight="@dimen/spacing_normal_24"
         android:layout_toLeftOf="@id/iv_event_icon"
         android:textColor="?attr/themeColorTextPrimary"
-        android:textSize="@dimen/text_large_32"
+        android:textSize="@dimen/text_normal"
         tools:text="Player1"
         tools:textColor="@color/black" />
 
@@ -41,7 +41,7 @@
         android:layout_marginLeft="@dimen/spacing_normal_24"
         android:layout_toRightOf="@id/iv_event_icon"
         android:textColor="?attr/themeColorTextPrimary"
-        android:textSize="@dimen/text_large_32"
+        android:textSize="@dimen/text_normal"
         tools:text="Player2"
         tools:textColor="@color/black" />
 </RelativeLayout>

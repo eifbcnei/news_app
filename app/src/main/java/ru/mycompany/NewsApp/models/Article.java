@@ -82,7 +82,6 @@ public class Article implements NewsItemModel, Parcelable {
         return title;
     }
 
-
     public String getContent() {
         return content;
     }

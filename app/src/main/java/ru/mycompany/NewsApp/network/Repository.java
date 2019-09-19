@@ -1,6 +1,7 @@
 package ru.mycompany.NewsApp.network;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -81,6 +82,7 @@ public class Repository {
                                 .body()
                                 .get(0));
                     }
+                    Log.d("___DOWNLOADED", matches.toString());
                     return matches;
                 }
             } catch (Exception e) {

@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/spacing_huge_64"
+            android:layout_marginLeft="@dimen/spacing_huge"
             android:layout_toRightOf="@id/iv_team_host"
             android:textColor="?attr/themeColorTextSecondary"
             android:textSize="32sp"
@@ -40,7 +40,7 @@
             android:layout_centerVertical="true"
             android:text="@string/teams_divider"
             android:textColor="?attr/themeColorTextSecondary"
-            android:textSize="@dimen/text_large_32"
+            android:textSize="@dimen/text_large"
             tools:textColor="@color/gray" />
 
         <TextView
@@ -58,10 +58,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/spacing_huge_64"
+            android:layout_marginRight="@dimen/spacing_huge"
             android:layout_toLeftOf="@id/iv_team_guest"
             android:textColor="?attr/themeColorTextSecondary"
-            android:textSize="@dimen/text_large_32"
+            android:textSize="@dimen/text_large"
             tools:text="2"
             tools:textColor="@color/gray" />
 

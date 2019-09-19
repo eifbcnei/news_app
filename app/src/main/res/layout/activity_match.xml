@@ -56,7 +56,7 @@
             android:layout_marginTop="44dp"
             android:text="@string/teams_divider"
             android:textColor="?attr/themeColorTextPrimary"
-            android:textSize="@dimen/text_large_32"
+            android:textSize="@dimen/text_large"
             tools:textColor="@android:color/black" />
 
         <TextView
@@ -68,7 +68,7 @@
             android:layout_marginRight="@dimen/spacing_small_8"
             android:layout_toLeftOf="@id/tv_teams_divider"
             android:textColor="?attr/themeColorTextPrimary"
-            android:textSize="@dimen/text_large_32"
+            android:textSize="@dimen/text_large"
             tools:text="5"
             tools:textColor="@android:color/black" />
 
@@ -81,7 +81,7 @@
             android:layout_marginTop="44dp"
             android:layout_toRightOf="@id/tv_teams_divider"
             android:textColor="?attr/themeColorTextPrimary"
-            android:textSize="@dimen/text_large_32"
+            android:textSize="@dimen/text_large"
             tools:text="5"
             tools:textColor="@color/black" />
 
@@ -126,37 +126,15 @@
             tools:textColor="@color/gray" />
 
         <TextView
-            android:id="@+id/tv_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_teams_divider"
-            android:layout_marginLeft="@dimen/spacing_small_8"
-            android:layout_marginTop="100dp"
-            android:text="@string/experts_opinion"
-            android:textColor="?attr/themeColorTextPrimary"
-            android:textSize="@dimen/text_large_32"
-            tools:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/tv_review"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_label"
-            android:layout_margin="@dimen/spacing_little_4"
-            android:textColor="?attr/themeColorTextSecondary"
-            android:textSize="@dimen/text_normal_20"
-            tools:text="Some words from experts"
-            tools:textColor="@color/gray" />
-
-        <TextView
+            android:layout_marginTop="@dimen/spacing_huge"
             android:id="@+id/tv_events_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_review"
+            android:layout_below="@id/tv_teams_divider"
             android:layout_centerHorizontal="true"
             android:text="Match events:"
             android:textColor="?attr/themeColorTextPrimary"
-            android:textSize="@dimen/text_large_32"
+            android:textSize="@dimen/text_large"
             tools:textColor="@color/black" />
 
         <androidx.recyclerview.widget.RecyclerView

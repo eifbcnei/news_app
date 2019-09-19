@@ -3,13 +3,13 @@
 
     <dimen name="card_edge_spacing">4dp</dimen>
     <dimen name="spacing_small_8">8dp</dimen>
-    <dimen name="text_large_32">32sp</dimen>
+    <dimen name="text_large">28sp</dimen>
     <dimen name="spacing_little_4">4dp</dimen>
-    <dimen name="text_normal_20">20sp</dimen>
+    <dimen name="text_normal">18sp</dimen>
     <dimen name="spacing_normal_24">24dp</dimen>
     <dimen name="emblem_big_120">120dp</dimen>
     <dimen name="photo_big_110">110dp</dimen>
-    <dimen name="spacing_huge_64">64dp</dimen>
+    <dimen name="spacing_huge">80dp</dimen>
     <dimen name="emblem_small_50">50dp</dimen>
 
 </resources>

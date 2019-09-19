@@ -67,4 +67,14 @@ public class MatchEvent implements Parcelable {
     public boolean isHostTeamPlayer() {
         return isHostTeamPlayer;
     }
+
+    @Override
+    public String toString() {
+        return "MatchEvent{" +
+                "type='" + type + '\'' +
+                ", minute=" + minute +
+                ", player='" + player + '\'' +
+                ", isHostTeamPlayer=" + isHostTeamPlayer +
+                '}';
+    }
 }

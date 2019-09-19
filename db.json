@@ -7,7 +7,6 @@
       "guest": "Barselona",
       "hostGoals": 4,
       "guestGoals": 0,
-      "review": "Good game, well played.",
       "date": "01.09.2019",
       "tags": [
         "Hot",
@@ -44,7 +43,6 @@
       "guest": "Barselona",
       "hostGoals": 0,
       "guestGoals": 0,
-      "review": "What a crazy game!",
       "date": "Live",
       "tags": [
         "Live",
@@ -55,7 +53,7 @@
       ],
       "matchEvents": [
         {
-          "type": "GOAL",
+          "type": "INJURY",
           "minute": 20,
           "player": "Salah",
           "isHostTeamPlayer": true
@@ -63,13 +61,13 @@
         {
           "type": "YELLOW_CARD",
           "minute": 29,
-          "player": "Ter Stegen",
+          "player": "Bale",
           "isHostTeamPlayer": false
         },
         {
-          "type": "GOAL",
+          "type": "CHANGE",
           "minute": 89,
-          "player": "Ter Stegen",
+          "player": "Bale -> Isko",
           "isHostTeamPlayer": false
         }
       ]

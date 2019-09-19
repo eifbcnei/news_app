@@ -49,6 +49,12 @@ public class MatchEventsAdapter extends RecyclerView.Adapter<MatchEventsAdapter.
             case "RED_CARD":
                 holder.iv_type.setImageResource(R.drawable.ic_red_card);
                 break;
+            case "CHANGE":
+                holder.iv_type.setImageResource(R.drawable.ic_change_24dp);
+                break;
+            case "INJURY":
+                holder.iv_type.setImageResource(R.drawable.ic_injury_24dp);
+                break;
         }
     }
 

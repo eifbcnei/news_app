@@ -1,5 +1,8 @@
 package ru.mycompany.NewsApp.network;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -23,11 +26,13 @@ public class Network {
                 .build();
         mRetrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(getGson()))
                 .client(client)
                 .build();
     }
-
+    private Gson getGson() {
+        return new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+    }
     RetrofitImpl getApi() {
         return mRetrofit.create(RetrofitImpl.class);
     }

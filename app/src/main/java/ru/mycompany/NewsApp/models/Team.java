@@ -58,4 +58,13 @@ public class Team implements Parcelable {
     public String getSite() {
         return site;
     }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "name='" + name + '\'' +
+                ", emblem='" + emblem + '\'' +
+                ", site='" + site + '\'' +
+                '}';
+    }
 }

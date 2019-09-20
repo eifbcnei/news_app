@@ -14,7 +14,7 @@
         android:layout_marginTop="@dimen/spacing_normal_24"
         android:layout_marginRight="@dimen/spacing_small_8"
         android:layout_marginBottom="@dimen/spacing_small_8"
-        android:background="?attr/themeColorCardBackground"
+        android:background="@drawable/bg_rounded_corners"
         tools:background="@color/white">
 
         <TextView

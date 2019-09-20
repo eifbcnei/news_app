@@ -28,7 +28,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/spacing_small_8"
+                    android:layout_marginRight="16dp"
                     android:background="?attr/themeColorPrimary"
                     android:src="@drawable/ic_brightness_24dp" />
 
@@ -55,57 +55,60 @@
         android:background="?attr/themeColorBackground"
         android:orientation="vertical">
 
-      <HorizontalScrollView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content">
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/cg_tags"
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_small_8"
-            android:visibility="visible"
-            app:chipSpacingHorizontal="16dp"
-            app:singleLine="true"
-            app:singleSelection="true">
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_all_posts"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/all_news"
-                android:textColor="?attr/themeColorTextAccent"
-                android:textSize="@dimen/text_normal"
-                app:checkedIcon="@drawable/ic_fiber_new_24dp"
-                app:chipBackgroundColor="?attr/themeColorAccentDark"
-                app:closeIconTint="@android:color/white"
-                app:rippleColor="?attr/themeColorBackground" />
+            android:layout_height="wrap_content">
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_live_matches"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
-                android:layout_width="wrap_content"
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cg_tags"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/chip_live"
-                android:textColor="?attr/themeColorTextAccent"
-                android:textSize="@dimen/text_normal"
-                app:checkedIcon="@drawable/ic_live_tv_24dp"
-                app:chipBackgroundColor="?attr/themeColorAccent"
-                app:closeIconTint="@android:color/white"
-                app:rippleColor="?attr/themeColorBackground" />
+                android:layout_margin="@dimen/spacing_small_8"
+                android:visibility="visible"
+                app:chipSpacingHorizontal="16dp"
+                app:singleLine="true"
+                app:singleSelection="true">
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_hot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checkable="true"
-                android:text="@string/chip_hot"
-                android:textColor="?attr/themeColorTextAccent"
-                app:checkedIcon="@drawable/ic_hot_24dp"
-                app:chipBackgroundColor="?attr/themeColorAccent"
-                app:rippleColor="?attr/themeColorBackground"/>
-        </com.google.android.material.chip.ChipGroup>
-      </HorizontalScrollView>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_all_posts"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/all_news"
+                    android:textColor="?attr/themeColorTextAccent"
+                    android:textSize="@dimen/text_normal"
+                    app:checkedIcon="@drawable/ic_fiber_new_24dp"
+                    app:chipBackgroundColor="?attr/themeColorAccentDark"
+                    app:closeIconTint="@android:color/white"
+                    app:rippleColor="?attr/themeColorBackground" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_live_matches"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chip_live"
+                    android:textColor="?attr/themeColorTextAccent"
+                    android:textSize="@dimen/text_normal"
+                    app:checkedIcon="@drawable/ic_live_tv_24dp"
+                    app:chipBackgroundColor="?attr/themeColorAccent"
+                    app:closeIconTint="@android:color/white"
+                    app:rippleColor="?attr/themeColorBackground" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_hot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="@string/chip_hot"
+                    android:textColor="?attr/themeColorTextAccent"
+                    app:checkedIcon="@drawable/ic_hot_24dp"
+                    app:chipBackgroundColor="?attr/themeColorAccent"
+                    app:rippleColor="?attr/themeColorBackground" />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/srl_refresh"
             android:layout_width="match_parent"

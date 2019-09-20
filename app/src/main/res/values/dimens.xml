@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="card_edge_spacing">4dp</dimen>
     <dimen name="spacing_small_8">8dp</dimen>
     <dimen name="text_large">28sp</dimen>
     <dimen name="spacing_little_4">4dp</dimen>
@@ -11,5 +10,6 @@
     <dimen name="photo_big_110">110dp</dimen>
     <dimen name="spacing_huge">80dp</dimen>
     <dimen name="emblem_small_50">50dp</dimen>
+    <dimen name="card_corner_radius">10dp</dimen>
 
 </resources>

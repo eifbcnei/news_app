@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="70dp"
-    android:layout_margin="@dimen/spacing_little_4">
+    android:layout_margin="@dimen/spacing_little">
 
     <ImageView
         android:id="@+id/iv_event_icon"
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginRight="@dimen/spacing_normal_24"
+        android:layout_marginRight="@dimen/spacing_normal"
         android:layout_toLeftOf="@id/iv_event_icon"
         android:textColor="?attr/themeColorTextPrimary"
         android:textSize="@dimen/text_normal"
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/spacing_normal_24"
+        android:layout_marginLeft="@dimen/spacing_normal"
         android:layout_toRightOf="@id/iv_event_icon"
         android:textColor="?attr/themeColorTextPrimary"
         android:textSize="@dimen/text_normal"

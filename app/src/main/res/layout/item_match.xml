@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    android:layout_marginLeft="@dimen/spacing_small_8"
-    android:layout_marginRight="@dimen/spacing_small_8"
-    android:layout_marginBottom="@dimen/spacing_small_8"
+    android:layout_marginLeft="@dimen/spacing_small"
+    android:layout_marginRight="@dimen/spacing_small"
+    android:layout_marginBottom="@dimen/spacing_small"
     android:orientation="vertical"
     app:cardCornerRadius="@dimen/card_corner_radius"
     tools:background="@android:color/darker_gray">
@@ -18,8 +18,8 @@
 
         <ImageView
             android:id="@+id/iv_team_host"
-            android:layout_width="@dimen/emblem_small_50"
-            android:layout_height="@dimen/emblem_small_50"
+            android:layout_width="@dimen/emblem_small"
+            android:layout_height="@dimen/emblem_small"
             android:layout_centerVertical="true"
             android:layout_marginLeft="32dp"
             android:src="@drawable/ic_unknown_team_50dp" />

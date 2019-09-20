@@ -10,10 +10,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/spacing_small_8"
-        android:layout_marginTop="@dimen/spacing_normal_24"
-        android:layout_marginRight="@dimen/spacing_small_8"
-        android:layout_marginBottom="@dimen/spacing_small_8"
+        android:layout_marginLeft="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_marginRight="@dimen/spacing_small"
+        android:layout_marginBottom="@dimen/spacing_small"
         android:background="@drawable/bg_rounded_corners"
         tools:background="@color/white">
 
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_stadium"
             android:layout_marginTop="44dp"
-            android:layout_marginRight="@dimen/spacing_small_8"
+            android:layout_marginRight="@dimen/spacing_small"
             android:layout_toLeftOf="@id/tv_teams_divider"
             android:textColor="?attr/themeColorTextPrimary"
             android:textSize="@dimen/text_large"
@@ -77,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_stadium"
-            android:layout_marginLeft="@dimen/spacing_small_8"
+            android:layout_marginLeft="@dimen/spacing_small"
             android:layout_marginTop="44dp"
             android:layout_toRightOf="@id/tv_teams_divider"
             android:textColor="?attr/themeColorTextPrimary"
@@ -87,11 +87,11 @@
 
         <ImageView
             android:id="@+id/iv_host_emblem"
-            android:layout_width="@dimen/emblem_big_120"
-            android:layout_height="@dimen/emblem_big_120"
+            android:layout_width="@dimen/emblem_big"
+            android:layout_height="@dimen/emblem_big"
             android:layout_below="@id/tv_stadium"
-            android:layout_marginTop="@dimen/spacing_normal_24"
-            android:layout_marginRight="@dimen/spacing_normal_24"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
             android:layout_toLeftOf="@+id/tv_host_goals"
             tools:background="@android:color/darker_gray" />
 
@@ -107,11 +107,11 @@
 
         <ImageView
             android:id="@+id/iv_guest_emblem"
-            android:layout_width="@dimen/emblem_big_120"
-            android:layout_height="@dimen/emblem_big_120"
+            android:layout_width="@dimen/emblem_big"
+            android:layout_height="@dimen/emblem_big"
             android:layout_below="@id/tv_stadium"
-            android:layout_marginLeft="@dimen/spacing_normal_24"
-            android:layout_marginTop="@dimen/spacing_normal_24"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_normal"
             android:layout_toRightOf="@id/tv_guest_goals"
             tools:background="@android:color/darker_gray" />
 
@@ -142,7 +142,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_events_header"
-            android:layout_marginTop="@dimen/spacing_small_8"
+            android:layout_marginTop="@dimen/spacing_small"
             tools:listitem="@layout/item_match_event" />
 
     </RelativeLayout>

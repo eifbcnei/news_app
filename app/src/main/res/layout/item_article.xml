@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="190dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="@dimen/card_corner_radius"
-   android:layout_marginBottom="@dimen/spacing_small_8"
-    android:layout_marginRight="@dimen/spacing_small_8"
-    android:layout_marginLeft="@dimen/spacing_small_8">
+    android:layout_marginLeft="@dimen/spacing_small"
+    android:layout_marginRight="@dimen/spacing_small"
+    android:layout_marginBottom="@dimen/spacing_small"
+    app:cardCornerRadius="@dimen/card_corner_radius">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,19 +17,20 @@
 
         <ImageView
             android:id="@+id/iv_article_photo"
-            android:layout_width="@dimen/photo_big_110"
-            android:layout_height="@dimen/photo_big_110"
+            android:layout_width="@dimen/photo_big"
+            android:layout_height="@dimen/photo_big"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/spacing_normal_24"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_small"
             tools:background="@color/red" />
 
         <TextView
             android:id="@+id/tv_article_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/spacing_small_8"
-            android:layout_marginTop="@dimen/spacing_small_8"
-            android:layout_marginRight="@dimen/spacing_small_8"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginRight="@dimen/spacing_small"
             android:layout_toRightOf="@id/iv_article_photo"
             android:fontFamily="sans-serif-medium"
             android:maxLength="75"
@@ -43,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/tv_article_title"
-            android:layout_margin="@dimen/spacing_little_4"
+            android:layout_margin="@dimen/spacing_little"
             android:layout_toRightOf="@+id/iv_article_photo"
             android:maxLength="230"
             android:maxLines="8"
@@ -56,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/iv_article_photo"
-            android:layout_margin="@dimen/spacing_small_8"
+            android:layout_margin="@dimen/spacing_small"
             android:layout_toLeftOf="@id/tv_article_description"
             android:textColor="?attr/themeColorTextSecondary"
             tools:text="Mail.ru"

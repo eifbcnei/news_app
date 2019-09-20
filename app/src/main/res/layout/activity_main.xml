@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/spacing_small_8"
+                    android:layout_marginRight="@dimen/spacing_small"
                     android:layout_toLeftOf="@id/ib_theme_swap"
                     app:queryHint="@string/search_hint"
                     app:searchIcon="@drawable/ic_search_24dp" />
@@ -63,7 +63,7 @@
                 android:id="@+id/cg_tags"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/spacing_small_8"
+                android:layout_margin="@dimen/spacing_small"
                 android:visibility="visible"
                 app:chipSpacingHorizontal="16dp"
                 app:singleLine="true"

@@ -3,7 +3,6 @@ package ru.mycompany.NewsApp.ui.activities;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,7 +23,7 @@ import ru.mycompany.NewsApp.AppPreferences;
 import ru.mycompany.NewsApp.R;
 import ru.mycompany.NewsApp.models.Match;
 import ru.mycompany.NewsApp.models.Team;
-import ru.mycompany.NewsApp.ui.adapters.MatchEventsAdapter;
+import ru.mycompany.NewsApp.ui.adapters.matchevents.MatchEventsAdapter;
 
 
 @EActivity

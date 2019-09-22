@@ -8,8 +8,7 @@
     android:layout_marginRight="@dimen/spacing_small"
     android:layout_marginBottom="@dimen/spacing_small"
     android:orientation="vertical"
-    app:cardCornerRadius="@dimen/card_corner_radius"
-    tools:background="@android:color/darker_gray">
+    app:cardCornerRadius="@dimen/card_corner_radius">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,12 +28,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/spacing_huge"
-            android:layout_toRightOf="@id/iv_team_host"
+            android:layout_marginRight="@dimen/spacing_small"
+            android:layout_toLeftOf="@id/tv_goals_divider"
             android:textColor="?attr/themeColorTextSecondary"
             android:textSize="32sp"
-            tools:text="5"
-            tools:textColor="@color/gray" />
+            tools:text="5" />
 
         <TextView
             android:id="@+id/tv_goals_divider"
@@ -44,8 +42,7 @@
             android:layout_centerVertical="true"
             android:text="@string/teams_divider"
             android:textColor="?attr/themeColorTextSecondary"
-            android:textSize="@dimen/text_large"
-            tools:textColor="@color/gray" />
+            android:textSize="@dimen/text_large" />
 
         <TextView
             android:id="@+id/tv_date"
@@ -54,25 +51,23 @@
             android:layout_below="@id/tv_goals_divider"
             android:layout_centerHorizontal="true"
             android:textColor="?attr/themeColorTextPrimary"
-            tools:text="11.11.2019"
-            tools:textColor="@color/black" />
+            tools:text="11.11.2019" />
 
         <TextView
             android:id="@+id/tv_guest_goals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/spacing_huge"
-            android:layout_toLeftOf="@id/iv_team_guest"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:layout_toRightOf="@id/tv_goals_divider"
             android:textColor="?attr/themeColorTextSecondary"
             android:textSize="@dimen/text_large"
-            tools:text="2"
-            tools:textColor="@color/gray" />
+            tools:text="2" />
 
         <ImageView
             android:id="@+id/iv_team_guest"
-            android:layout_width="@dimen/emblem_small_50"
-            android:layout_height="@dimen/emblem_small_50"
+            android:layout_width="@dimen/emblem_small"
+            android:layout_height="@dimen/emblem_small"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="32dp"

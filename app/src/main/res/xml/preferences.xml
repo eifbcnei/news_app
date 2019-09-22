@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.preference.PreferenceCategory app:title="@string/theme">
+        <androidx.preference.SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:icon="@drawable/ic_brightness_24dp"
+            app:key="pref_night_theme"
+            app:title="@string/night_theme" />
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory app:title="@string/recommendations">
+        <androidx.preference.CheckBoxPreference
+            app:defaultValue="true"
+            app:icon="@drawable/ic_eye_24dp"
+            app:key="pref_tags_visibility"
+            app:title="@string/tags_visibility" />
+    </androidx.preference.PreferenceCategory>
+</androidx.preference.PreferenceScreen>

@@ -57,7 +57,7 @@
         android:background="?attr/themeColorBackground"
         android:fillViewport="true"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        tools:background="@color/light_gray">
+       >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,7 +65,7 @@
             android:layout_margin="@dimen/spacing_small"
             android:background="@drawable/bg_rounded_corners"
             android:orientation="vertical"
-            tools:background="@color/white">
+           >
 
             <TextView
                 android:id="@+id/tv_title"
@@ -76,7 +76,7 @@
                 android:textColor="?attr/themeColorTextPrimary"
                 android:textSize="@dimen/text_large"
                 tools:text="Title"
-                tools:textColor="@color/black" />
+               />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_bonus_photos"
@@ -95,7 +95,7 @@
                 android:textColor="?attr/themeColorTextSecondary"
                 android:textSize="@dimen/text_normal"
                 tools:text="Content"
-                tools:textColor="@color/light_gray" />
+                />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

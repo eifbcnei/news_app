@@ -1,4 +1,4 @@
-package ru.mycompany.NewsApp.ui.adapters.renderers;
+package ru.mycompany.NewsApp.ui.adapters.main.renderers;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso;
 
 import ru.mycompany.NewsApp.R;
 import ru.mycompany.NewsApp.models.Article;
-import ru.mycompany.NewsApp.ui.adapters.viewholders.ArticleViewHolder;
+import ru.mycompany.NewsApp.ui.adapters.main.viewholders.ArticleViewHolder;
 
 public class ArticleRenderer extends ViewRenderer<Article, ArticleViewHolder> {
     public ArticleRenderer(int viewType, @NonNull Context context) {

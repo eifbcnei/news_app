@@ -8,6 +8,7 @@
         <item name="autoCompleteTextViewStyle">@style/SearchAutoCompleteTextView</item>
     </style>
 
+
     <style name="AppTheme.Day">
         <item name="themeColorPrimary">@color/blue</item>
         <item name="themeColorPrimaryDark">@color/dark_blue</item>

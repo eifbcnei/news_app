@@ -22,7 +22,7 @@ import org.androidannotations.annotations.ViewById;
 import ru.mycompany.NewsApp.AppPreferences;
 import ru.mycompany.NewsApp.R;
 import ru.mycompany.NewsApp.models.Article;
-import ru.mycompany.NewsApp.ui.adapters.BonusPhotoAdapter;
+import ru.mycompany.NewsApp.ui.adapters.bonusphotos.BonusPhotoAdapter;
 
 @EActivity
 public class ArticleActivity extends AppCompatActivity {

@@ -82,7 +82,6 @@ public class Repository {
                                 .body()
                                 .get(0));
                     }
-                    Log.d("___DOWNLOADED", matches.toString());
                     return matches;
                 }
             } catch (Exception e) {

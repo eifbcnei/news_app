@@ -1,4 +1,4 @@
-package ru.mycompany.NewsApp.ui.adapters;
+package ru.mycompany.NewsApp.ui.adapters.main;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ItemTouchHelper;

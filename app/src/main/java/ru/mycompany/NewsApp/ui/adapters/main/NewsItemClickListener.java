@@ -1,4 +1,4 @@
-package ru.mycompany.NewsApp.ui.adapters;
+package ru.mycompany.NewsApp.ui.adapters.main;
 
 import ru.mycompany.NewsApp.models.NewsItemModel;
 

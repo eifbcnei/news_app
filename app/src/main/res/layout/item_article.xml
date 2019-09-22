@@ -12,8 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?attr/themeColorCardBackground"
-        tools:background="@color/white">
+        android:background="?attr/themeColorCardBackground">
 
         <ImageView
             android:id="@+id/iv_article_photo"
@@ -22,7 +21,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/spacing_normal"
             android:layout_marginRight="@dimen/spacing_small"
-            tools:background="@color/red" />
+            tools:background="@android:color/darker_gray" />
 
         <TextView
             android:id="@+id/tv_article_title"
@@ -36,8 +35,7 @@
             android:maxLength="75"
             android:maxLines="2"
             android:textColor="?attr/themeColorTextPrimary"
-            tools:text="Very very long article title to test multiline attribute."
-            tools:textColor="@color/black" />
+            tools:text="Very very long article title to test multiline attribute." />
 
         <TextView
             android:id="@+id/tv_article_description"
@@ -49,8 +47,7 @@
             android:maxLength="230"
             android:maxLines="8"
             android:textColor="?attr/themeColorTextSecondary"
-            tools:text="Some very long text which is general description of the article..."
-            tools:textColor="@color/gray" />
+            tools:text="Some very long text which is general description of the article..." />
 
         <TextView
             android:id="@+id/tv_source"
@@ -60,7 +57,6 @@
             android:layout_margin="@dimen/spacing_small"
             android:layout_toLeftOf="@id/tv_article_description"
             android:textColor="?attr/themeColorTextSecondary"
-            tools:text="Mail.ru"
-            tools:textColor="@color/gray" />
+            tools:text="Mail.ru" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

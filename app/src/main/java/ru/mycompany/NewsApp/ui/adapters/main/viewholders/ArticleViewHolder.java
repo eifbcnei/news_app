@@ -1,4 +1,4 @@
-package ru.mycompany.NewsApp.ui.adapters.viewholders;
+package ru.mycompany.NewsApp.ui.adapters.main.viewholders;
 
 import android.view.View;
 import android.widget.ImageView;

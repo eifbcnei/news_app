@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/themeColorBackground"
-    tools:background="@color/light_blue"
     tools:context=".ui.activities.MatchActivity">
 
     <RelativeLayout
@@ -14,8 +13,7 @@
         android:layout_marginTop="@dimen/spacing_normal"
         android:layout_marginRight="@dimen/spacing_small"
         android:layout_marginBottom="@dimen/spacing_small"
-        android:background="@drawable/bg_rounded_corners"
-        tools:background="@color/white">
+        android:background="@drawable/bg_rounded_corners">
 
         <TextView
             android:id="@+id/tv_date"
@@ -24,8 +22,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
             android:textColor="?attr/themeColorTextSecondary"
-            tools:text="22.09.2019"
-            tools:textColor="@color/light_gray" />
+            tools:text="22.09.2019" />
 
         <TextView
             android:id="@+id/tv_game_stage"
@@ -34,8 +31,7 @@
             android:layout_below="@+id/tv_date"
             android:layout_centerHorizontal="true"
             android:textColor="?attr/themeColorTextPrimary"
-            tools:text="Qualification"
-            tools:textColor="@color/black" />
+            tools:text="Qualification" />
 
         <TextView
             android:id="@+id/tv_stadium"
@@ -44,8 +40,7 @@
             android:layout_below="@+id/tv_game_stage"
             android:layout_centerHorizontal="true"
             android:textColor="?attr/themeColorTextPrimary"
-            tools:text="Some stadium"
-            tools:textColor="@android:color/black" />
+            tools:text="Some stadium" />
 
         <TextView
             android:id="@+id/tv_teams_divider"
@@ -56,8 +51,7 @@
             android:layout_marginTop="44dp"
             android:text="@string/teams_divider"
             android:textColor="?attr/themeColorTextPrimary"
-            android:textSize="@dimen/text_large"
-            tools:textColor="@android:color/black" />
+            android:textSize="@dimen/text_large" />
 
         <TextView
             android:id="@+id/tv_host_goals"
@@ -69,8 +63,7 @@
             android:layout_toLeftOf="@id/tv_teams_divider"
             android:textColor="?attr/themeColorTextPrimary"
             android:textSize="@dimen/text_large"
-            tools:text="5"
-            tools:textColor="@android:color/black" />
+            tools:text="5" />
 
         <TextView
             android:id="@+id/tv_guest_goals"
@@ -82,8 +75,7 @@
             android:layout_toRightOf="@id/tv_teams_divider"
             android:textColor="?attr/themeColorTextPrimary"
             android:textSize="@dimen/text_large"
-            tools:text="5"
-            tools:textColor="@color/black" />
+            tools:text="5" />
 
         <ImageView
             android:id="@+id/iv_host_emblem"
@@ -92,8 +84,7 @@
             android:layout_below="@id/tv_stadium"
             android:layout_marginTop="@dimen/spacing_normal"
             android:layout_marginRight="@dimen/spacing_normal"
-            android:layout_toLeftOf="@+id/tv_host_goals"
-            tools:background="@android:color/darker_gray" />
+            android:layout_toLeftOf="@+id/tv_host_goals" />
 
         <TextView
             android:id="@+id/tv_host_team"
@@ -112,8 +103,7 @@
             android:layout_below="@id/tv_stadium"
             android:layout_marginLeft="@dimen/spacing_normal"
             android:layout_marginTop="@dimen/spacing_normal"
-            android:layout_toRightOf="@id/tv_guest_goals"
-            tools:background="@android:color/darker_gray" />
+            android:layout_toRightOf="@id/tv_guest_goals" />
 
         <TextView
             android:id="@+id/tv_guest_team"
@@ -122,20 +112,18 @@
             android:layout_below="@id/iv_host_emblem"
             android:layout_alignLeft="@id/iv_guest_emblem"
             android:textColor="?attr/themeColorTextSecondary"
-            tools:text="Team two"
-            tools:textColor="@color/gray" />
+            tools:text="Team two" />
 
         <TextView
-            android:layout_marginTop="@dimen/spacing_huge"
             android:id="@+id/tv_events_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_teams_divider"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/spacing_huge"
             android:text="Match events:"
             android:textColor="?attr/themeColorTextPrimary"
-            android:textSize="@dimen/text_large"
-            tools:textColor="@color/black" />
+            android:textSize="@dimen/text_large" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_match_events"

@@ -1,4 +1,4 @@
-package ru.mycompany.NewsApp.ui.adapters.renderers;
+package ru.mycompany.NewsApp.ui.adapters.main.renderers;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -14,7 +14,7 @@ import com.squareup.picasso.Picasso;
 
 import ru.mycompany.NewsApp.R;
 import ru.mycompany.NewsApp.models.Match;
-import ru.mycompany.NewsApp.ui.adapters.viewholders.MatchViewHolder;
+import ru.mycompany.NewsApp.ui.adapters.main.viewholders.MatchViewHolder;
 
 public class MatchRenderer extends ViewRenderer<Match, MatchViewHolder> {
 

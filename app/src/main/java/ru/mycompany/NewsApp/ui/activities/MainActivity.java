@@ -1,5 +1,6 @@
 package ru.mycompany.NewsApp.ui.activities;
 
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -36,11 +37,11 @@ import ru.mycompany.NewsApp.R;
 import ru.mycompany.NewsApp.models.Article;
 import ru.mycompany.NewsApp.models.Match;
 import ru.mycompany.NewsApp.models.NewsItemModel;
-import ru.mycompany.NewsApp.ui.adapters.MainAdapter;
-import ru.mycompany.NewsApp.ui.adapters.NewsItemClickListener;
-import ru.mycompany.NewsApp.ui.adapters.SwipeRemoveCallback;
-import ru.mycompany.NewsApp.ui.adapters.renderers.ArticleRenderer;
-import ru.mycompany.NewsApp.ui.adapters.renderers.MatchRenderer;
+import ru.mycompany.NewsApp.ui.adapters.main.MainAdapter;
+import ru.mycompany.NewsApp.ui.adapters.main.NewsItemClickListener;
+import ru.mycompany.NewsApp.ui.adapters.main.SwipeRemoveCallback;
+import ru.mycompany.NewsApp.ui.adapters.main.renderers.ArticleRenderer;
+import ru.mycompany.NewsApp.ui.adapters.main.renderers.MatchRenderer;
 import ru.mycompany.NewsApp.viewmodels.MainViewModel;
 
 @EActivity
@@ -66,6 +67,15 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         setContentView(R.layout.activity_main);
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        //when return from settings activity
+        //recreate this activity according to preferences
+        //if returns from another activity this will update data
+        recreate();
+    }
+
     @AfterViews
     void initToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -73,28 +83,28 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(null);
 
-        final ImageButton btnThemeChange = findViewById(R.id.ib_theme_swap);
+        final ImageButton btnSettings = findViewById(R.id.ib_settings);
 
-        btnThemeChange.setOnClickListener(new View.OnClickListener() {
+        btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppPreferences.switchTheme();
-                recreate();
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
             }
         });
-        //hide btnThemeChange when sv_search view is expanded
+        //hide btnSettings when sv_search view is expanded
         //else show
         sv_search.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnThemeChange.setVisibility(View.GONE);
+                btnSettings.setVisibility(View.GONE);
             }
         });
 
         sv_search.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
             public boolean onClose() {
-                btnThemeChange.setVisibility(View.VISIBLE);
+                btnSettings.setVisibility(View.VISIBLE);
                 return false;
             }
         });
@@ -115,6 +125,8 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
 
     @Override
     public void onBackPressed() {
+        //when search view is expanded close it
+        //else close app
         if (!sv_search.isIconified()) {
             sv_search.setIconified(true);
         } else {
@@ -154,32 +166,40 @@ public class MainActivity extends AppCompatActivity implements NewsItemClickList
         viewModel.getTags().observe(this, new Observer<List<String>>() {
             @Override
             public void onChanged(List<String> tags) {
-                //default chips are : all news,live,hot
-                final int DEFAULT_CHIPS_COUNT = 3;
-                if (cg_tags.getChildCount() > DEFAULT_CHIPS_COUNT) {
-                    //if tags were updated then remove not default tags
-                    //and then add new tags
-                    cg_tags.removeViews(DEFAULT_CHIPS_COUNT, cg_tags.getChildCount() - DEFAULT_CHIPS_COUNT);
-                }
-
-                //if tags were updated set default checked
-                chip_all_posts.setChecked(true);
-                boolean isNightTheme = AppPreferences.isSetNightTheme();
-
-                for (String tag : tags) {
-                    Chip chip = new Chip(MainActivity.this);
-                    chip.setId(View.generateViewId());
-                    chip.setText(tag);
-                    chip.setChipBackgroundColor(getResources().getColorStateList(isNightTheme ?
-                            R.color.dark_blue : R.color.violet));
-                    chip.setTextColor(getResources().getColor(isNightTheme ? R.color.orange : R.color.white));
-                    chip.setClickable(true);
-                    chip.setCheckable(true);
-                    chip.setRippleColor(getResources().getColorStateList(isNightTheme ? R.color.light_gray : R.color.light_blue));
-                    cg_tags.addView(chip);
+                if (!AppPreferences.areTagsVisible()) {
+                    cg_tags.setVisibility(View.GONE);
+                } else {
+                    initTags(tags);
                 }
             }
         });
+    }
+
+    private void initTags(List<String> tags) {
+        //default chips are : all news,live,hot
+        final int DEFAULT_CHIPS_COUNT = 3;
+        if (cg_tags.getChildCount() > DEFAULT_CHIPS_COUNT) {
+            //if tags were updated then remove not default tags
+            //and then add new tags
+            cg_tags.removeViews(DEFAULT_CHIPS_COUNT, cg_tags.getChildCount() - DEFAULT_CHIPS_COUNT);
+        }
+
+        //if tags were updated set default checked
+        chip_all_posts.setChecked(true);
+        boolean isNightTheme = AppPreferences.isNightTheme();
+
+        for (String tag : tags) {
+            Chip chip = new Chip(MainActivity.this);
+            chip.setId(View.generateViewId());
+            chip.setText(tag);
+            chip.setChipBackgroundColor(getResources().getColorStateList(isNightTheme ?
+                    R.color.dark_blue : R.color.violet));
+            chip.setTextColor(getResources().getColor(isNightTheme ? R.color.orange : R.color.white));
+            chip.setClickable(true);
+            chip.setCheckable(true);
+            chip.setRippleColor(getResources().getColorStateList(isNightTheme ? R.color.light_gray : R.color.light_blue));
+            cg_tags.addView(chip);
+        }
     }
 
     private boolean isConnected() {

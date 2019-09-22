@@ -1,4 +1,4 @@
-package ru.mycompany.NewsApp.ui.adapters.renderers;
+package ru.mycompany.NewsApp.ui.adapters.main.renderers;
 
 import android.content.Context;
 import android.view.ViewGroup;
@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import ru.mycompany.NewsApp.models.NewsItemModel;
-import ru.mycompany.NewsApp.ui.adapters.NewsItemClickListener;
+import ru.mycompany.NewsApp.ui.adapters.main.NewsItemClickListener;
 
 public abstract class ViewRenderer<M extends NewsItemModel, VH extends RecyclerView.ViewHolder> {
     private final int mType;
@@ -19,7 +19,7 @@ public abstract class ViewRenderer<M extends NewsItemModel, VH extends RecyclerV
     public ViewRenderer(final int viewType, @NonNull final Context context) {
         mType = viewType;
         mContext = context;
-        listener= (NewsItemClickListener) context;
+        listener = (NewsItemClickListener) context;
     }
 
     @NonNull

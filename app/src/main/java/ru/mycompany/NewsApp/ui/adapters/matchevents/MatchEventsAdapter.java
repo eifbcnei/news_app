@@ -1,4 +1,4 @@
-package ru.mycompany.NewsApp.ui.adapters;
+package ru.mycompany.NewsApp.ui.adapters.matchevents;
 
 import android.content.Context;
 import android.view.LayoutInflater;

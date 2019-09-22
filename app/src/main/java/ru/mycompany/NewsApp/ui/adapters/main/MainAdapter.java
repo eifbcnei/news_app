@@ -1,4 +1,4 @@
-package ru.mycompany.NewsApp.ui.adapters;
+package ru.mycompany.NewsApp.ui.adapters.main;
 
 import android.content.Context;
 import android.util.SparseArray;
@@ -18,7 +18,7 @@ import java.util.List;
 import ru.mycompany.NewsApp.R;
 import ru.mycompany.NewsApp.models.NewsItemModel;
 import ru.mycompany.NewsApp.ui.activities.MainActivity;
-import ru.mycompany.NewsApp.ui.adapters.renderers.ViewRenderer;
+import ru.mycompany.NewsApp.ui.adapters.main.renderers.ViewRenderer;
 
 @EBean
 public class MainAdapter extends RecyclerView.Adapter {

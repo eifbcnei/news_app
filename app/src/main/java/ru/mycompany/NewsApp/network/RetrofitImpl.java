@@ -24,5 +24,5 @@ public interface RetrofitImpl {
     Call<List<String>> getTags();
 
     @GET("players")
-    Call<List<Player>> getPlayer(@Query("name") String playerId);
+    Call<List<Player>> getPlayer(@Query("playerId") String playerId);
 }

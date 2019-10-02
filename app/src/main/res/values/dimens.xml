@@ -10,9 +10,10 @@
     <dimen name="spacing_huge">80dp</dimen>
 
     <dimen name="emblem_big">120dp</dimen>
-    <dimen name="photo_big">110dp</dimen>
+    <dimen name="photo_big">125dp</dimen>
     <dimen name="emblem_small">50dp</dimen>
 
     <dimen name="card_corner_radius">10dp</dimen>
+    <dimen name="avatar_big">150dp</dimen>
 
 </resources>

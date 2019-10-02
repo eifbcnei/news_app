@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="190dp"
-    android:layout_margin="@dimen/spacing_small"
+    android:layout_marginLeft="@dimen/spacing_small"
+    android:layout_marginTop="@dimen/spacing_little"
+    android:layout_marginRight="@dimen/spacing_small"
+    android:layout_marginBottom="@dimen/spacing_little"
     app:cardCornerRadius="@dimen/card_corner_radius">
 
     <RelativeLayout

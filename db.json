@@ -126,12 +126,38 @@
           "value": "FC Liverpool"
         },
         {
+          "attribute": "Amplua",
+          "value": "Forward"
+        },
+        {
           "attribute": "Games played",
           "value": "36"
         },
         {
           "attribute": "Goals scored",
           "value": "21"
+        }
+      ]
+    },
+    {
+      "playerId": "Ter Stegen",
+      "avatar": "https://bombardir.ru/images/ut_players/small/20448.jpg",
+      "attributes": [
+        {
+          "attribute": "Name",
+          "value": "Mark-Andre"
+        },
+        {
+          "attribute": "Surname",
+          "value": "Ter Stegen"
+        },
+        {
+          "attribute": "Club",
+          "value": "FC Barselona"
+        },
+        {
+          "attribute": "Amplua",
+          "value": "Goalkeeper"
         }
       ]
     }

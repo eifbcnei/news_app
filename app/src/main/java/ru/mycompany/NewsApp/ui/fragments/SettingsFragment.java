@@ -34,7 +34,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         if (key.equals(THEME_PREFERENCE)) {
             Activity mCurrentActivity = getActivity();
             mCurrentActivity.finish();
-            //show animation instead of black screen during recreate()
+            //show animation instead of black screen during 'recreate'
             mCurrentActivity.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             mCurrentActivity.startActivity(mCurrentActivity.getIntent());
         }

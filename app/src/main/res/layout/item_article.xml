@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="190dp"
-    android:layout_marginLeft="@dimen/spacing_small"
-    android:layout_marginRight="@dimen/spacing_small"
-    android:layout_marginBottom="@dimen/spacing_small"
+    android:layout_margin="@dimen/spacing_small"
     app:cardCornerRadius="@dimen/card_corner_radius">
 
     <RelativeLayout
@@ -35,7 +33,7 @@
             android:maxLength="75"
             android:maxLines="2"
             android:textColor="?attr/themeColorTextPrimary"
-            tools:text="Very very long article title to test multiline attribute." />
+            tools:text="Very very long article title to test multiline player." />
 
         <TextView
             android:id="@+id/tv_article_description"

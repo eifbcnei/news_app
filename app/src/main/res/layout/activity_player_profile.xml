@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/themeColorBackground"
+    tools:context=".ui.activities.PlayerProfileActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:title="@string/app_name"
+            app:titleTextColor="?attr/themeColorTextAccent" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <ru.mycompany.NewsApp.ui.customviews.CircleImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/photo_big"
+            android:layout_height="@dimen/photo_big"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/spacing_normal"
+            app:srcCompat="@drawable/ic_unknown_50dp"
+            app:strokeColor="?attr/themeColorPrimary"
+            app:strokeWidth="3dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_player_attrs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_avatar"
+            android:layout_marginTop="@dimen/spacing_normal"
+            tools:listitem="@layout/item_player_attribute" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

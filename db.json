@@ -5,7 +5,7 @@
       "gameType": "Play-off",
       "host": "Liverpool",
       "guest": "Barselona",
-      "hostGoals": 4,
+      "hostGoals": 1,
       "guestGoals": 0,
       "date": "01.09.2019",
       "tags": [
@@ -23,30 +23,6 @@
         {
           "type": "YELLOW_CARD",
           "minute": 29,
-          "player": "Ter Stegen",
-          "isHostTeamPlayer": false
-        },
-        {
-          "type": "GOAL",
-          "minute": "47",
-          "player": "Origi",
-          "isHostTeamPlayer": true
-        },
-        {
-          "type": "GOAL",
-          "minute": "49",
-          "player": "Origi",
-          "isHostTeamPlayer": true
-        },
-        {
-          "type": "GOAL",
-          "minute": 87,
-          "player": "Origi",
-          "isHostTeamPlayer": true
-        },
-        {
-          "type": "RED_CARD",
-          "minute": 89,
           "player": "Ter Stegen",
           "isHostTeamPlayer": false
         }
@@ -90,23 +66,6 @@
     }
   ],
   "articles": [
-    {
-      "title": "Построил для Моуринью непроходимую защиту, мало самостоятельно тренировал – все это о тренере Шотландии",
-      "description": "Май 2019-го: сборная Шотландии прощается с Алексом Маклишем и занимается поиском нового тренера. Тогда шотландский Футбольный Союз сделал неочевидный шаг – пригласил Стива Кларка на должность главного тренера.",
-      "content": "В сезоне-2005/06, когда «Челси» защитил титул чемпиона АПЛ, у Моуринью спросили о вкладе его помощников в этот успех. «Стив – чудесный человек. Работа ассистента заключается в том, чтобы помогать главному тренеру в любое время суток. Стив готов поработать в любую минуту. Не знаю, будет ли он тренировать самостоятельно, но помощник из него отличный».В том сезоне «Челси» оторвался от «МЮ», который был вторым, на восемь очков. За год «Челси» пропустил всего 22 гола и в этом есть прямой вклад Стива Кларка. Кларк был защитником, поэтому Моур обязал его контролировать оборону «Челси». Во-первых, Кларк настоял на том, чтобы клуб взял Асьера Дель Орно. Во-вторых, Кларк самостоятельно прорабатывал связки. Моуринью правильно характеризовал Кларка – он настоящий трудоголик. Он пришел к выводу, что лучше защитникам «Челси» действовать в этой игре посмелее и помогать полузащитникам и форвардам в атаке. Итог – 3:0 в пользу «Челси».",
-      "source": "transfermarkt.com",
-      "mainPhotoUrl": "https://bombardir.nekkimobile.ru/images/nut_articles/image/79a4fac016d97f03a02d1e36e5c7aa6f.jpeg",
-      "bonusPhotosUrls": [
-        "https://bombardir.nekkimobile.ru/images/nut_articles/image/922e9257c200c93c4a14a3b9d70a4263.jpg",
-        "https://bombardir.nekkimobile.ru/images/nut_articles/image/81e2084a2651160eaa69768e28ff0bf0.jpeg",
-        "https://bombardir.nekkimobile.ru/images/nut_articles/image/9716be63b33e6c0b190f37d49c7d4b1c.jpeg"
-      ],
-      "tags": [
-        "Russia",
-        "Scotland",
-        "Qualification"
-      ]
-    },
     {
       "title": "Монако показывает, как не надо тратить 140 миллионов. Пропускает больше всех в лиге, упускает победы, идет на 19-м месте",
       "description": "Монако в последние два сезона – тихий ужас. В прошлом: 17 место в чемпионате. В этом – после пяти туров предпоследняя строчка в таблице.",
@@ -155,6 +114,34 @@
       "name": "Real Madrid",
       "emblem": "https://upload.wikimedia.org/wikipedia/ru/9/98/Real_Madrid.png",
       "site": "https://www.realmadrid.com"
+    }
+  ],
+  "players": [
+    {
+      "playerId": "Salah",
+      "avatar": "",
+      "attributes": [
+        {
+          "attribute": "Name",
+          "value": "Mohamed"
+        },
+        {
+          "attribute": "Surname",
+          "value": "Salah"
+        },
+        {
+          "attribute": "Club",
+          "value": "FC Liverpool"
+        },
+        {
+          "attribute": "Games played",
+          "value": "36"
+        },
+        {
+          "attribute": "Goals scored",
+          "value": "21"
+        }
+      ]
     }
   ],
   "tags": [

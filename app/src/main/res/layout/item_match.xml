@@ -21,7 +21,7 @@
             android:layout_height="@dimen/emblem_small"
             android:layout_centerVertical="true"
             android:layout_marginLeft="32dp"
-            android:src="@drawable/ic_unknown_team_50dp" />
+            android:src="@drawable/ic_unknown_50dp" />
 
         <TextView
             android:id="@+id/tv_host_goals"
@@ -71,6 +71,6 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="32dp"
-            android:src="@drawable/ic_unknown_team_50dp" />
+            android:src="@drawable/ic_unknown_50dp" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

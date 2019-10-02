@@ -2,7 +2,7 @@
 <androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.preference.PreferenceCategory app:title="@string/theme">
-        <androidx.preference.SwitchPreferenceCompat
+        <androidx.preference.CheckBoxPreference
             app:defaultValue="false"
             app:icon="@drawable/ic_brightness_24dp"
             app:key="pref_night_theme"
@@ -10,7 +10,7 @@
     </androidx.preference.PreferenceCategory>
 
     <androidx.preference.PreferenceCategory app:title="@string/recommendations">
-        <androidx.preference.CheckBoxPreference
+        <androidx.preference.SwitchPreferenceCompat
             app:defaultValue="true"
             app:icon="@drawable/ic_eye_24dp"
             app:key="pref_tags_visibility"

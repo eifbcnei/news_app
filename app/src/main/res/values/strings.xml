@@ -16,4 +16,5 @@
     <string name="theme">Theme</string>
     <string name="recommendations">Recommendations</string>
     <string name="tags_visibility">Show recommended tags</string>
+    <string name="attr_divider">:</string>
 </resources>

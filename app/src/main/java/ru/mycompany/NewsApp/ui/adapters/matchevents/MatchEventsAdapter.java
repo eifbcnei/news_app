@@ -16,11 +16,19 @@ import ru.mycompany.NewsApp.R;
 import ru.mycompany.NewsApp.models.MatchEvent;
 
 public class MatchEventsAdapter extends RecyclerView.Adapter<MatchEventsAdapter.ViewHolder> {
+    private static final String EVENT_YELLOW_CARD = "YELLOW_CARD";
+    private static final String EVENT_RED_CARD = "RED_CARD";
+    private static final String EVENT_CHANGE = "CHANGE";
+    private static final String EVENT_INJURY = "INJURY";
+    private static final String EVENT_GOAL = "GOAL";
+
     private List<MatchEvent> matchEvents;
     private Context mContext;
+    private PlayerClickListener listener;
 
     public MatchEventsAdapter(Context context, List<MatchEvent> matchEvents) {
         mContext = context;
+        listener = (PlayerClickListener) context;
         this.matchEvents = matchEvents;
     }
 
@@ -31,28 +39,42 @@ public class MatchEventsAdapter extends RecyclerView.Adapter<MatchEventsAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        MatchEvent event = matchEvents.get(position);
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+        final MatchEvent event = matchEvents.get(position);
         holder.tv_minute.setText(Integer.toString(event.getMinute()));
         if (event.isHostTeamPlayer()) {
             holder.tv_host_player.setText(event.getPlayer());
+            holder.tv_host_player.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (!event.getType().equals(EVENT_CHANGE))
+                        listener.onPlayerSelected(event.getPlayer());
+                }
+            });
         } else {
             holder.tv_guest_player.setText(event.getPlayer());
+            holder.tv_guest_player.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (!event.getType().equals(EVENT_CHANGE))
+                        listener.onPlayerSelected(event.getPlayer());
+                }
+            });
         }
         switch (event.getType()) {
-            case "GOAL":
+            case EVENT_GOAL:
                 holder.iv_type.setImageResource(R.drawable.ic_ball);
                 break;
-            case "YELLOW_CARD":
+            case EVENT_YELLOW_CARD:
                 holder.iv_type.setImageResource(R.drawable.ic_yellow_card);
                 break;
-            case "RED_CARD":
+            case EVENT_RED_CARD:
                 holder.iv_type.setImageResource(R.drawable.ic_red_card);
                 break;
-            case "CHANGE":
+            case EVENT_CHANGE:
                 holder.iv_type.setImageResource(R.drawable.ic_change_24dp);
                 break;
-            case "INJURY":
+            case EVENT_INJURY:
                 holder.iv_type.setImageResource(R.drawable.ic_injury_24dp);
                 break;
         }
@@ -69,7 +91,7 @@ public class MatchEventsAdapter extends RecyclerView.Adapter<MatchEventsAdapter.
         final ImageView iv_type;
 
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_minute = itemView.findViewById(R.id.tv_time);
             tv_host_player = itemView.findViewById(R.id.tv_host_player);

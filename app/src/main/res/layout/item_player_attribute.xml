@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_margin="@dimen/spacing_small"
+    android:background="?attr/themeColorCardBackground"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_attribute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/spacing_normal"
+        android:textColor="?attr/themeColorTextPrimary"
+        android:textSize="@dimen/text_normal"
+        tools:text="Name" />
+
+    <TextView
+        android:id="@+id/tv_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/tv_attribute"
+        android:text="@string/attr_divider"
+        android:textColor="?attr/themeColorTextPrimary"
+        android:textSize="@dimen/text_normal" />
+
+    <TextView
+        android:id="@+id/tv_attr_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/spacing_normal"
+        android:layout_toRightOf="@id/tv_divider"
+        android:textColor="?attr/themeColorTextSecondary"
+        android:textSize="@dimen/text_normal"
+        tools:text="Players name" />
+
+</RelativeLayout>

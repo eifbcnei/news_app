@@ -1,7 +1,6 @@
 package ru.mycompany.NewsApp.network;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,6 +12,7 @@ import retrofit2.Response;
 import ru.mycompany.NewsApp.models.Article;
 import ru.mycompany.NewsApp.models.Match;
 import ru.mycompany.NewsApp.models.NewsItemModel;
+import ru.mycompany.NewsApp.models.Player;
 
 public class Repository {
     private final static Repository instance = new Repository();
@@ -22,6 +22,17 @@ public class Repository {
 
     public static Repository getInstance() {
         return instance;
+    }
+
+    public static Player loadPlayer(String playerId) {
+        try {
+            return new PlayerDownloader().execute(playerId).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public List<NewsItemModel> getAllPosts() throws ExecutionException, InterruptedException {
@@ -34,6 +45,23 @@ public class Repository {
 
     public List<String> getTags() throws ExecutionException, InterruptedException {
         return new TagsDownloader().execute().get();
+    }
+
+    static class PlayerDownloader extends AsyncTask<String, Void, Player> {
+        @Override
+        protected Player doInBackground(String... strings) {
+            try {
+                Response<Player> response = Network
+                        .getInstance()
+                        .getApi()
+                        .getPlayer(strings[0])
+                        .execute();
+                return response.body();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
     }
 
     static class TagsDownloader extends AsyncTask<Void, Void, List<String>> {

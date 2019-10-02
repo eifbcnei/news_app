@@ -7,6 +7,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 import ru.mycompany.NewsApp.models.Article;
 import ru.mycompany.NewsApp.models.Match;
+import ru.mycompany.NewsApp.models.Player;
 import ru.mycompany.NewsApp.models.Team;
 
 public interface RetrofitImpl {
@@ -21,4 +22,7 @@ public interface RetrofitImpl {
 
     @GET("tags")
     Call<List<String>> getTags();
+
+    @GET("players")
+    Call<Player> getPlayer(@Query("name") String playerId);
 }

@@ -32,8 +32,6 @@ import ru.mycompany.NewsApp.viewmodels.MatchViewModel;
 
 @EActivity
 public class MatchActivity extends AppCompatActivity implements PlayerClickListener {
-    @Extra("Match")
-    Match match;
     @ViewById
     TextView tv_stadium;
     @ViewById
@@ -54,6 +52,8 @@ public class MatchActivity extends AppCompatActivity implements PlayerClickListe
     TextView tv_guest_team;
     @ViewById
     RecyclerView rv_match_events;
+    @Extra("Match")
+    Match match;
     private MatchViewModel viewModel;
 
     @Override
@@ -80,6 +80,10 @@ public class MatchActivity extends AppCompatActivity implements PlayerClickListe
         Picasso.with(this)
                 .load(guest.getEmblem())
                 .into(iv_guest_emblem);
+    }
+
+    @AfterViews
+    void initAdapter() {
         MatchEventsAdapter adapter = new MatchEventsAdapter(this, match.getMatchEvents());
         LinearLayoutManager manager = new LinearLayoutManager(this);
         rv_match_events.setLayoutManager(manager);

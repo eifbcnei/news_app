@@ -51,12 +51,12 @@ public class Repository {
         @Override
         protected Player doInBackground(String... strings) {
             try {
-                Response<Player> response = Network
+                Response<List<Player>> response = Network
                         .getInstance()
                         .getApi()
                         .getPlayer(strings[0])
                         .execute();
-                return response.body();
+                return response.body().get(0);
             } catch (IOException e) {
                 e.printStackTrace();
                 return null;

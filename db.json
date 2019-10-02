@@ -31,16 +31,14 @@
     {
       "stadium": "Santiago Bernabeu",
       "gameType": "La Liga",
-      "host": "Real Madrid",
-      "guest": "Barselona",
+      "host": "Liverpool",
+      "guest": "Real Madrid",
       "hostGoals": 0,
       "guestGoals": 0,
       "date": "Live",
       "tags": [
         "Live",
-        "Barselona",
         "Real Madrid",
-        "La Liga",
         "Spain"
       ],
       "matchEvents": [
@@ -49,12 +47,6 @@
           "minute": 20,
           "player": "Salah",
           "isHostTeamPlayer": true
-        },
-        {
-          "type": "YELLOW_CARD",
-          "minute": 29,
-          "player": "Bale",
-          "isHostTeamPlayer": false
         },
         {
           "type": "CHANGE",
@@ -119,7 +111,7 @@
   "players": [
     {
       "playerId": "Salah",
-      "avatar": "",
+      "avatar": "https://bombardir.ru/images/ut_players/small/26609.jpg",
       "attributes": [
         {
           "attribute": "Name",
